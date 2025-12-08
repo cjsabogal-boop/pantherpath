@@ -2111,8 +2111,10 @@ a:focus {
 }
 
 .success-text {
-    color: var(--color-text-secondary);
+    color: #FFFFFF;
     font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.6;
 }
 
 /* ===========================
