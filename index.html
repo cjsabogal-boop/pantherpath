@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Panther Path - Acompañamiento mental personalizado para jinetes. Recupera tu confianza, supera tus miedos y disfruta el deporte nuevamente con sesiones 1:1.">
+    <meta name="keywords"
+        content="equitación, jinetes, mentalidad ecuestre, confianza, coaching mental, deporte ecuestre">
+    <title>Panther Path - Acompañamiento Mental para Jinetes Ecuestres</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- SVG Gradient Definition for Icons -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#8B7355;stop-opacity:1" />
+                <stop offset="15%" style="stop-color:#B8941E;stop-opacity:1" />
+                <stop offset="35%" style="stop-color:#D4AF37;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#F4D03F;stop-opacity:1" />
+                <stop offset="65%" style="stop-color:#D4AF37;stop-opacity:1" />
+                <stop offset="85%" style="stop-color:#B8941E;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#8B7355;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-text">PANTHER</span>
+                <span class="logo-divider"></span>
+                <span class="logo-text-light">PATH</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#sobre" class="nav-link" data-i18n="nav.about">Sobre Mí</a></li>
+                <li><a href="#beneficios" class="nav-link" data-i18n="nav.benefits">Beneficios</a></li>
+                <li><a href="#proceso" class="nav-link" data-i18n="nav.process">Proceso</a></li>
+                <li><a href="#journey" class="nav-link" data-i18n="nav.journey">Mi Journey</a></li>
+                <li><a href="#planes" class="nav-link" data-i18n="nav.plans">Planes</a></li>
+                <li><a href="#waitlist" class="nav-link btn-nav" data-i18n="nav.joinWaitlist">Únete al Waitlist</a></li>
+            </ul>
+            <div class="lang-toggle" id="langToggle">
+                <button class="lang-btn active" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Slider -->
+    <section class="hero-slider" id="hero">
+        <div class="slider-container">
+            <div class="slide active"
+                style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.27.43.webp')">
+                <div class="slide-overlay"></div>
+            </div>
+            <div class="slide"
+                style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.24.24.webp')">
+                <div class="slide-overlay"></div>
+            </div>
+            <div class="slide"
+                style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.44.00.webp')">
+                <div class="slide-overlay"></div>
+            </div>
+        </div>
+
+        <div class="hero-content-wrapper">
+            <div class="container">
+                <div class="hero-content-inner">
+                    <div class="hero-badge" data-i18n="hero.badge">Acompañamiento Mental Ecuestre</div>
+                    <h1 class="hero-title hero-title-animated">
+                        <span class="hero-logo-text">PANTHER</span>
+                        <span class="hero-logo-divider"></span>
+                        <span class="hero-logo-text-light">PATH</span>
+                    </h1>
+                    <div class="hero-subtitle-wrapper">
+                        <p class="hero-subtitle" data-i18n="hero.subtitle">Entrena tu mente, domina tu camino</p>
+                        <button class="video-play-btn" data-video="jNQXAC9IVRw" aria-label="Ver video">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="hero-description" data-i18n="hero.description">
+                        Un espacio diseñado para jinetes que aman este deporte, pero sienten que la mente a veces no los
+                        deja avanzar como quisieran.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#waitlist" class="btn btn-primary btn-large">
+                            <span data-i18n="hero.joinButton">Únete al Waitlist</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <!-- Founder Profile Block -->
+                        <div class="founder-profile">
+                            <div class="founder-avatar"
+                                style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.24.24 (1).webp')">
+                            </div>
+                            <div class="founder-details">
+                                <h4 class="founder-name" data-i18n="hero.founderName">Nicole Sabogal</h4>
+                                <p class="founder-role" data-i18n="hero.founderRole">Founder Panther Path</p>
+                            </div>
+                            <a href="#nicole-story" class="btn btn-outline btn-large" data-i18n="hero.learnMore">Conoce
+                                Más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="slider-btn slider-prev" id="sliderPrev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button class="slider-btn slider-next" id="sliderNext">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+
+        <div class="slider-dots" id="sliderDots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Stats Section - White Background -->
+    <section class="stats-section white-section">
+        <div class="container">
+            <div class="stats-grid-enhanced">
+                <div class="stat-item-enhanced">
+                    <div class="stat-icon-enhanced">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <div class="stat-number-enhanced" data-target="100">0</div>
+                    <div class="stat-symbol">%</div>
+                    <div class="stat-label-enhanced" data-i18n="stats.stat1Label">Personalizado</div>
+                    <div class="stat-description" data-i18n="stats.stat1Desc">Cada sesión adaptada a ti</div>
+                </div>
+                <div class="stat-item-enhanced">
+                    <div class="stat-icon-enhanced">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                            <path d="M4 22h16"></path>
+                            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-number-enhanced" data-target="1">0</div>
+                    <div class="stat-symbol">:1</div>
+                    <div class="stat-label-enhanced" data-i18n="stats.stat2Label">Sesiones</div>
+                    <div class="stat-description" data-i18n="stats.stat2Desc">Atención individual completa</div>
+                </div>
+                <div class="stat-item-enhanced">
+                    <div class="stat-icon-enhanced">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-number-enhanced" data-target="45">0</div>
+                    <div class="stat-symbol">min</div>
+                    <div class="stat-label-enhanced" data-i18n="stats.stat3Label">Por Sesión</div>
+                    <div class="stat-description" data-i18n="stats.stat3Desc">Tiempo enfocado en ti</div>
+                </div>
+                <div class="stat-item-enhanced">
+                    <div class="stat-icon-enhanced">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-number-enhanced" data-target="6">0</div>
+                    <div class="stat-symbol">+</div>
+                    <div class="stat-label-enhanced" data-i18n="stats.stat4Label">Beneficios Clave</div>
+                    <div class="stat-description" data-i18n="stats.stat4Desc">Resultados medibles</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nicole Story Section -->
+    <section class="section section-split white-split-section" id="nicole-story">
+        <div class="split-container story-reverse">
+            <div class="split-content">
+                <div class="split-content-inner">
+                    <span class="section-label" data-i18n="nicoleStory.label">Mi Historia</span>
+                    <h2 class="section-title-large" data-i18n="nicoleStory.title">Soy Nicole Sabogal</h2>
+                    <p class="text-large" data-i18n="nicoleStory.paragraph1">
+                        Monté durante 17 años y durante muchos de ellos fui una persona muy nerviosa para montar.
+                        Vivía la equitación con presión, miedo y muchísima tensión interna.
+                    </p>
+                    <p class="text-large">
+                        <span data-i18n="nicoleStory.paragraph2">Aun así, con trabajo, disciplina y el apoyo de mis
+                            caballos, llegué a ser campeona nacional con
+                            Lasser, y más adelante, con Lolo, logré algo que jamás imaginé:</span> <strong class="gold"
+                            data-i18n="nicoleStory.highlight1">saltar 1.50 y
+                            finalmente disfrutar el deporte.</strong>
+                    </p>
+                    <p class="text-large">
+                        <span data-i18n="nicoleStory.paragraph3">Ese proceso —pasar de ser nerviosa a la confianza real—
+                            me marcó para siempre.
+                            Y es la razón por la que hoy existe</span> <strong class="gold"
+                            data-i18n="nicoleStory.highlight2">Panther Path</strong>.
+                    </p>
+                </div>
+            </div>
+            <div class="split-image"
+                style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.24.24 (2).webp')">
+                <div class="split-image-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre el Programa - Split Section -->
+    <section class="section section-split" id="sobre" style="background: white !important;">
+        <div class="split-container" style="background: white !important;">
+            <div class="split-image"
+                style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.24.24 (1).webp')">
+                <div class="split-image-overlay"></div>
+            </div>
+            <div class="split-content">
+                <div class="split-content-inner">
+                    <span class="section-label" data-i18n="about.label">Sobre el Programa</span>
+                    <h2 class="section-title-large"><span data-i18n="about.title" style="color: white;">¿Por qué Panther
+                            Path?</span></h2>
+                    <p class="text-large" data-i18n="about.paragraph1" style="color: white;">
+                        Panther Path nace de mi propia experiencia como amazona. Sé lo que es querer disfrutar más,
+                        confiar más y montar con claridad… pero sentir que la cabeza juega en contra.
+                    </p>
+                    <p class="text-large" data-i18n="about.paragraph2" style="color: white;">
+                        Por eso creé este proceso: para ayudarte a recuperar tu confianza, disfrutar el deporte
+                        nuevamente y avanzar hacia las metas que te ilusionan como jinete.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span data-i18n="about.feature1">Acompañamiento 100% personalizado</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span data-i18n="about.feature2">Herramientas prácticas y aplicables</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span data-i18n="about.feature3">Resultados medibles y sostenibles</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios con Imágenes - White Background -->
+    <section class="section section-beneficios-visual white-section" id="beneficios">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label" data-i18n="benefits.label">Beneficios</span>
+                <h2 class="section-title-large"><span data-i18n="benefits.title">En este proceso podrás</span></h2>
+                <div class="divider-gold-center"></div>
+            </div>
+
+            <div class="beneficios-visual-grid">
+                <div class="beneficio-visual-card">
+                    <div class="beneficio-visual-image"
+                        style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.27.43.webp')">
+                    </div>
+                    <div class="beneficio-visual-content">
+                        <div class="beneficio-number">01</div>
+                        <h3 class="beneficio-visual-title" data-i18n="benefits.benefit1.title">Identificar y Superar
+                        </h3>
+                        <p class="beneficio-visual-description" data-i18n="benefits.benefit1.description">Identifica qué
+                            te está frenando y cómo superarlo con
+                            herramientas prácticas</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-visual-card">
+                    <div class="beneficio-visual-image"
+                        style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.24.24 (1).webp')">
+                    </div>
+                    <div class="beneficio-visual-content">
+                        <div class="beneficio-number">02</div>
+                        <h3 class="beneficio-visual-title" data-i18n="benefits.benefit2.title">Reconstruir Confianza
+                        </h3>
+                        <p class="beneficio-visual-description" data-i18n="benefits.benefit2.description">Reconstruye o
+                            fortalece tu confianza en la pista</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-visual-card">
+                    <div class="beneficio-visual-image"
+                        style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.24.24.webp')">
+                    </div>
+                    <div class="beneficio-visual-content">
+                        <div class="beneficio-number">03</div>
+                        <h3 class="beneficio-visual-title" data-i18n="benefits.benefit3.title">Manejo Emocional</h3>
+                        <p class="beneficio-visual-description" data-i18n="benefits.benefit3.description">Maneja mejor
+                            tus emociones antes, durante y después de
+                            entrenar</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-visual-card">
+                    <div class="beneficio-visual-image"
+                        style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.44.00 (2).webp')">
+                    </div>
+                    <div class="beneficio-visual-content">
+                        <div class="beneficio-number">04</div>
+                        <h3 class="beneficio-visual-title" data-i18n="benefits.benefit4.title">Presencia y Control</h3>
+                        <p class="beneficio-visual-description" data-i18n="benefits.benefit4.description">Siéntete más
+                            presente, estable y en control</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-visual-card">
+                    <div class="beneficio-visual-image"
+                        style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.24.24 (2).webp')">
+                    </div>
+                    <div class="beneficio-visual-content">
+                        <div class="beneficio-number">05</div>
+                        <h3 class="beneficio-visual-title" data-i18n="benefits.benefit5.title">Metas Claras</h3>
+                        <p class="beneficio-visual-description" data-i18n="benefits.benefit5.description">Traduce tus
+                            metas en pasos claros y aplicables durante
+                            la montada</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-visual-card">
+                    <div class="beneficio-visual-image"
+                        style="background-image: url('images/optimized/caballos/Legacy/WhatsApp Image 2025-12-02 at 16.49.00 (2).webp')">
+                    </div>
+                    <div class="beneficio-visual-content">
+                        <div class="beneficio-number">06</div>
+                        <h3 class="beneficio-visual-title" data-i18n="benefits.benefit6.title">Acompañamiento
+                            Personalizado</h3>
+                        <p class="beneficio-visual-description" data-i18n="benefits.benefit6.description">Avanza con un
+                            acompañamiento cercano, estructurado y
+                            adaptado a tu ritmo</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Accordion for Benefits -->
+            <div class="mobile-accordion-container" id="beneficiosAccordion">
+                <!-- Benefit 1 -->
+                <button class="mobile-accordion-toggle" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="toggle-number">01</span>
+                        <span class="toggle-title" data-i18n="benefits.benefit1.title">Identificar y Superar</span>
+                    </div>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-accordion-content">
+                    <div class="beneficio-image"
+                        style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.27.43.webp')">
+                    </div>
+                    <p class="beneficio-description" data-i18n="benefits.benefit1.description">Identifica qué te está
+                        frenando y cómo superarlo con herramientas prácticas</p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <button class="mobile-accordion-toggle" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="toggle-number">02</span>
+                        <span class="toggle-title" data-i18n="benefits.benefit2.title">Reconstruir Confianza</span>
+                    </div>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-accordion-content">
+                    <div class="beneficio-image"
+                        style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.24.24 (1).webp')">
+                    </div>
+                    <p class="beneficio-description" data-i18n="benefits.benefit2.description">Reconstruye o fortalece
+                        tu confianza en la pista</p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <button class="mobile-accordion-toggle" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="toggle-number">03</span>
+                        <span class="toggle-title" data-i18n="benefits.benefit3.title">Manejo Emocional</span>
+                    </div>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-accordion-content">
+                    <div class="beneficio-image"
+                        style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.24.24.webp')">
+                    </div>
+                    <p class="beneficio-description" data-i18n="benefits.benefit3.description">Maneja mejor tus
+                        emociones antes, durante y después de entrenar</p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <button class="mobile-accordion-toggle" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="toggle-number">04</span>
+                        <span class="toggle-title" data-i18n="benefits.benefit4.title">Presencia y Control</span>
+                    </div>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-accordion-content">
+                    <div class="beneficio-image"
+                        style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.44.00 (2).webp')">
+                    </div>
+                    <p class="beneficio-description" data-i18n="benefits.benefit4.description">Siéntete más presente,
+                        estable y en control</p>
+                </div>
+
+                <!-- Benefit 5 -->
+                <button class="mobile-accordion-toggle" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="toggle-number">05</span>
+                        <span class="toggle-title" data-i18n="benefits.benefit5.title">Metas Claras</span>
+                    </div>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-accordion-content">
+                    <div class="beneficio-image"
+                        style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.24.24 (2).webp')">
+                    </div>
+                    <p class="beneficio-description" data-i18n="benefits.benefit5.description">Traduce tus metas en
+                        pasos claros y aplicables durante la montada</p>
+                </div>
+
+                <!-- Benefit 6 -->
+                <button class="mobile-accordion-toggle" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="toggle-number">06</span>
+                        <span class="toggle-title" data-i18n="benefits.benefit6.title">Acompañamiento
+                            Personalizado</span>
+                    </div>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-accordion-content">
+                    <div class="beneficio-image"
+                        style="background-image: url('images/optimized/caballos/Legacy/WhatsApp Image 2025-12-02 at 16.49.00 (2).webp')">
+                    </div>
+                    <p class="beneficio-description" data-i18n="benefits.benefit6.description">Avanza con un
+                        acompañamiento cercano, estructurado y adaptado a tu ritmo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo Funciona - Timeline -->
+    <section class="section section-proceso" id="proceso">
+        <div class="proceso-background"
+            style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.44.01.webp')">
+            <div class="proceso-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="section-header-center white">
+                <span class="section-label white" data-i18n="process.label">Tu ruta hacia la confianza</span>
+                <h2 class="section-title-large white"><span data-i18n="process.title">Tu camino personalizado</span>
+                </h2>
+                <div class="divider-gold-center"></div>
+            </div>
+
+            <div class="route-container">
+                <!-- Ruta (Línea Punteada) -->
+                <div class="route-line"></div>
+
+                <!-- Paso 1 -->
+                <div class="route-step">
+                    <div class="route-dot">
+                        <div class="route-dot-inner"></div>
+                    </div>
+                    <div class="route-content">
+                        <span class="route-label" data-i18n="process.step1.label">Inicio</span>
+                        <h3 class="route-title" data-i18n="process.step1.title">Ciclo de Admisión</h3>
+                        <p class="route-description" data-i18n="process.step1.description">Abrimos espacios limitados
+                            por temporada para garantizarte una
+                            atención exclusiva y personalizada.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="route-step">
+                    <div class="route-dot">
+                        <div class="route-dot-inner"></div>
+                    </div>
+                    <div class="route-content">
+                        <span class="route-label" data-i18n="process.step2.label">Registro</span>
+                        <h3 class="route-title" data-i18n="process.step2.title">Únete al Waitlist</h3>
+                        <p class="route-description" data-i18n="process.step2.description">Asegura tu lugar en la lista
+                            de espera prioritaria para ser el
+                            primero en enterarte cuando abramos.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="route-step">
+                    <div class="route-dot">
+                        <div class="route-dot-inner"></div>
+                    </div>
+                    <div class="route-content">
+                        <span class="route-label" data-i18n="process.step3.label">Diagnóstico</span>
+                        <h3 class="route-title" data-i18n="process.step3.title">Sesión Piloto Gratuita</h3>
+                        <p class="route-description" data-i18n="process.step3.description">Recibe una sesión inicial de
+                            diagnóstico donde trazaremos juntos tu
+                            mapa de objetivos y estrategia.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="route-step">
+                    <div class="route-dot">
+                        <div class="route-dot-inner"></div>
+                    </div>
+                    <div class="route-content">
+                        <span class="route-label" data-i18n="process.step4.label">Acción</span>
+                        <h3 class="route-title" data-i18n="process.step4.title">Confirmación y Despegue</h3>
+                        <p class="route-description" data-i18n="process.step4.description">Formalizamos tu ingreso y
+                            activamos tu plan de entrenamiento
+                            mental. ¡Tu transformación comienza aquí!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Accordion for Process Steps -->
+            <div class="mobile-accordion-container" id="procesoAccordion">
+                <!-- Step 1 -->
+                <button class="mobile-accordion-toggle" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="toggle-number">01</span>
+                        <span class="toggle-title" data-i18n="process.step1.title">Ciclo de Admisión</span>
+                    </div>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-accordion-content">
+                    <span class="route-label" data-i18n="process.step1.label">Inicio</span>
+                    <p class="beneficio-description" data-i18n="process.step1.description">Abrimos espacios limitados
+                        por temporada para garantizarte una atención exclusiva y personalizada.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <button class="mobile-accordion-toggle" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="toggle-number">02</span>
+                        <span class="toggle-title" data-i18n="process.step2.title">Únete al Waitlist</span>
+                    </div>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-accordion-content">
+                    <span class="route-label" data-i18n="process.step2.label">Registro</span>
+                    <p class="beneficio-description" data-i18n="process.step2.description">Asegura tu lugar en la lista
+                        de espera prioritaria para ser el primero en enterarte cuando abramos.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <button class="mobile-accordion-toggle" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="toggle-number">03</span>
+                        <span class="toggle-title" data-i18n="process.step3.title">Sesión Piloto Gratuita</span>
+                    </div>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-accordion-content">
+                    <span class="route-label" data-i18n="process.step3.label">Diagnóstico</span>
+                    <p class="beneficio-description" data-i18n="process.step3.description">Recibe una sesión inicial de
+                        diagnóstico donde trazaremos juntos tu mapa de objetivos y estrategia.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <button class="mobile-accordion-toggle" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="toggle-number">04</span>
+                        <span class="toggle-title" data-i18n="process.step4.title">Confirmación y Despegue</span>
+                    </div>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-accordion-content">
+                    <span class="route-label" data-i18n="process.step4.label">Acción</span>
+                    <p class="beneficio-description" data-i18n="process.step4.description">Formalizamos tu ingreso y
+                        activamos tu plan de entrenamiento mental. ¡Tu transformación comienza aquí!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section section-gallery">
+        <div class="gallery-grid">
+            <div class="gallery-item"
+                style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.24.24 (2).webp')">
+            </div>
+            <div class="gallery-item"
+                style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.43.59 (1).webp')">
+            </div>
+            <div class="gallery-item large"
+                style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.27.43.webp')">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title" data-i18n="gallery.title">Vive tu pasión con confianza</h3>
+                    <a href="#waitlist" class="btn btn-primary" data-i18n="gallery.cta">Comienza Ahora</a>
+                </div>
+            </div>
+            <div class="gallery-item"
+                style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.24.24.webp')">
+            </div>
+            <div class="gallery-item"
+                style="background-image: url('images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.44.00.webp')">
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey con los Caballos Section -->
+    <section class="section section-journey gray-section" id="journey" style="position: relative; overflow: hidden;">
+        <div class="floating-particles">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 0.5s;"></div>
+            <div class="particle" style="left: 50%; animation-delay: 1.5s;"></div>
+            <div class="particle" style="left: 60%; animation-delay: 2.5s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 0.8s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 1.8s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 2.2s;"></div>
+        </div>
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label" data-i18n="journey.label">Mi Historia</span>
+                <h2 class="section-title-large"><span style="color: black;" data-i18n="journey.title">Mi Journey con Mis
+                        Caballos</span></h2>
+                <div class="divider-gold-center"></div>
+            </div>
+
+            <div class="journey-timeline">
+                <!-- Legacy -->
+                <div class="journey-item">
+                    <div class="journey-marker">
+                        <div class="journey-icon">🌟</div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-header">
+                            <h3 class="journey-title"><span data-i18n="journey.legacy.name"></span>Legacy</span> <em
+                                    data-i18n="journey.legacy.subtitle">Mi inicio y mi caída</em></h3>
+                        </div>
+                        <div class="journey-text">
+                            <p><strong data-i18n="journey.legacy.text1">Legacy fue mi primer caballo.</strong></p>
+                            <p data-i18n="journey.legacy.text2">Con él crecí, gané muchísimo y me enamoré del deporte…
+                                pero también viví un bajón muy fuerte.</p>
+                            <p data-i18n="journey.legacy.text3">Me comían los nervios, me caía todo el tiempo, me
+                                bloqueaba y no lograba salir mentalmente de ese lugar.</p>
+                            <p><strong data-i18n="journey.legacy.text4">Ahí entendí por primera vez que la equitación se
+                                    gana o se pierde en la mente.</strong></p>
+                        </div>
+                        <div class="journey-gallery">
+                            <div class="journey-photo"
+                                style="background-image: url('images/optimized/caballos/Legacy/PHOTO-2025-12-02-16-50-22.webp')">
+                            </div>
+                            <div class="journey-photo"
+                                style="background-image: url('images/optimized/caballos/Legacy/WhatsApp Image 2025-12-02 at 16.49.0f0.webp')">
+                            </div>
+                            <div class="journey-photo"
+                                style="background-image: url('images/optimized/caballos/Legacy/WhatsApp Image 2025-12-02 at 16.54.02.webp')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poker -->
+                <div class="journey-item">
+                    <div class="journey-marker">
+                        <div class="journey-icon">🌟</div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-header">
+                            <h3 class="journey-title"><span data-i18n="journey.poker.name">Poker</span> <em
+                                    data-i18n="journey.poker.subtitle">El caballo que vino a retar</em></h3>
+                        </div>
+                        <div class="journey-text">
+                            <p data-i18n="journey.poker.text1">Después llegó Poker, quien fue una transición llena de
+                                aprendizajes.</p>
+                            <p><strong data-i18n="journey.poker.text2">No avanzaba al ritmo que quería y me confundía
+                                    mucho no entender por qué.</strong></p>
+                            <p data-i18n="journey.poker.text3">Fue un camino de crecimiento interno, paciencia y
+                                humildad dentro del deporte.</p>
+                            <p data-i18n="journey.poker.text4">Poker me enseñó que no todo es lineal, y que sanar
+                                mentalmente también hace parte de montar.</p>
+                        </div>
+                        <div class="journey-gallery">
+                            <div class="journey-photo"
+                                style="background-image: url('images/optimized/caballos/Poker Star/WhatsApp Image 2025-12-02 at 16.53.52.webp')">
+                            </div>
+                            <div class="journey-photo"
+                                style="background-image: url('images/optimized/caballos/Poker Star/WhatsApp Image 2025-12-02 at 16.53.522.webp')">
+                            </div>
+                            <div class="journey-photo"
+                                style="background-image: url('images/optimized/caballos/Poker Star/WhatsApp Image 2025-12-102 at 16.53.52.webp')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lasser -->
+                <div class="journey-item">
+                    <div class="journey-marker">
+                        <div class="journey-icon">🌟</div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-header">
+                            <h3 class="journey-title"><span data-i18n="journey.lasser.name">Lasser</span> <em
+                                    data-i18n="journey.lasser.subtitle">Mi cambio mental absoluto</em></h3>
+                        </div>
+                        <div class="journey-text">
+                            <p><strong data-i18n="journey.lasser.text1">Con Lasser todo cambió.</strong></p>
+                            <p><span data-i18n="journey.lasser.text2">No solo empecé a ganar:</span> <strong
+                                    data-i18n="journey.lasser.text2b">fui campeona nacional.</strong></p>
+                            <p data-i18n="journey.lasser.text3">Él me mostró lo que realmente significa la disciplina,
+                                la resiliencia y la importancia de confiar en ti misma.</p>
+                            <p data-i18n="journey.lasser.text4">Me enseñó que, al final, tú tienes el control de tu
+                                mente, de tus decisiones y de tu progreso.</p>
+                            <p><strong data-i18n="journey.lasser.text5">Lasser fue mi mayor maestro mental.</strong></p>
+                        </div>
+                        <div class="journey-gallery">
+                            <div class="journey-photo"
+                                style="background-image: url('images/optimized/caballos/Legacy/WhatsApp Image 2025-12-02 at 16.49.00.webp')">
+                            </div>
+                            <div class="journey-photo"
+                                style="background-image: url('images/optimized/caballos/Legacy/WhatsApp Image 2025-12-02 at 16.49.00 (2).webp')">
+                            </div>
+                            <div class="journey-photo"
+                                style="background-image: url('images/optimized/caballos/Laser/PHOTO-2025-12-02-16-50-44.webp')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Black Panther (Lolo) -->
+                <div class="journey-item highlight">
+                    <div class="journey-marker">
+                        <div class="journey-icon">🌟</div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-header">
+                            <h3 class="journey-title"><span data-i18n="journey.lolo.name">Black Panther (Lolo)</span>
+                                <em data-i18n="journey.lolo.subtitle">El sueño que sí se cumplió</em>
+                            </h3>
+                        </div>
+                        <div class="journey-text">
+                            <p><strong data-i18n="journey.lolo.text1">Black Panther siguió ese legado.</strong></p>
+                            <p data-i18n="journey.lolo.text2">Durante un tiempo fue el aprendiz de Lasser, un potro
+                                lleno de corazón.</p>
+                            <p data-i18n="journey.lolo.text3">Verlo crecer fue un privilegio: conectar con él me enseñó
+                                que los logros más grandes no son siempre en la pista, sino en casa, en los pequeños
+                                avances, en la autoestima y en la constancia.</p>
+                            <p class="journey-highlight-text"><span data-i18n="journey.lolo.text4">Desde Legacy yo
+                                    soñaba con saltar 1.20… y muchos años después, con bloqueos, entrenadores y
+                                    opiniones que me frenaron, llegó Lolo para demostrarme que</span> <strong
+                                    data-i18n="journey.lolo.text4b">cuando la mente cambia, todo cambia.</strong></p>
+                            <p data-i18n="journey.lolo.text5">Con él cumplí sueños que pensé imposibles: también fuimos
+                                campeones nacionales, y antes de fallecer, me regaló el logro más grande de mi vida:</p>
+                            <p class="journey-final-achievement"><strong data-i18n="journey.lolo.text6">Saltar 1.50 y
+                                    entender que no tienes límites cuando confías en tu camino.</strong></p>
+                        </div>
+                        <div class="journey-gallery">
+                            <div class="journey-photo"
+                                style="background-image: url('images/optimized/caballos/Black Panther/WhatsApp Image 2025-12-02 at 16.49.00.webp')">
+                            </div>
+                            <div class="journey-photo"
+                                style="background-image: url('images/optimized/caballos/Black Panther/WhatsApp Image 2025-12-02 at 16.49.01.webp')">
+                            </div>
+                            <div class="journey-photo"
+                                style="background-image: url('images/optimized/caballos/Black Panther/WhatsApp Image 2025-12-02 at 16.49.013.webp')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Accordion for Journey Section -->
+            <div class="mobile-accordion-container journey-mobile-accordion">
+                <!-- Legacy - Expanded by default -->
+                <button class="mobile-accordion-toggle journey-accordion-toggle active" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="journey-accordion-icon">🌟</span>
+                        <div class="toggle-info">
+                            <span class="toggle-title">Legacy</span>
+                            <span class="toggle-subtitle">Mi inicio y mi caída</span>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="mobile-accordion-content journey-accordion-content active">
+                    <div class="journey-accordion-text">
+                        <p><strong>Legacy fue mi primer caballo.</strong></p>
+                        <p>Con él crecí, gané muchísimo y me enamoré del deporte… pero también viví un bajón muy fuerte.
+                        </p>
+                        <p>Me comían los nervios, me caía todo el tiempo, me bloqueaba y no lograba salir mentalmente de
+                            ese lugar.</p>
+                        <p><strong>Ahí entendí por primera vez que la equitación se gana o se pierde en la
+                                mente.</strong></p>
+                    </div>
+                    <div class="journey-accordion-gallery">
+                        <img src="images/optimized/caballos/Legacy/PHOTO-2025-12-02-16-50-22.webp" alt="Legacy">
+                    </div>
+                </div>
+
+                <!-- Poker -->
+                <button class="mobile-accordion-toggle journey-accordion-toggle" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="journey-accordion-icon">🌟</span>
+                        <div class="toggle-info">
+                            <span class="toggle-title">Poker</span>
+                            <span class="toggle-subtitle">El caballo que vino a retar</span>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="mobile-accordion-content journey-accordion-content">
+                    <div class="journey-accordion-text">
+                        <p>Después llegó Poker, quien fue una transición llena de aprendizajes.</p>
+                        <p><strong>No avanzaba al ritmo que quería y me confundía mucho no entender por qué.</strong>
+                        </p>
+                        <p>Fue un camino de crecimiento interno, paciencia y humildad dentro del deporte.</p>
+                        <p>Poker me enseñó que no todo es lineal, y que sanar mentalmente también hace parte de montar.
+                        </p>
+                    </div>
+                    <div class="journey-accordion-gallery">
+                        <img src="images/optimized/caballos/Poker Star/WhatsApp Image 2025-12-02 at 16.53.52.webp"
+                            alt="Poker">
+                    </div>
+                </div>
+
+                <!-- Lasser -->
+                <button class="mobile-accordion-toggle journey-accordion-toggle" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="journey-accordion-icon">🌟</span>
+                        <div class="toggle-info">
+                            <span class="toggle-title">Lasser</span>
+                            <span class="toggle-subtitle">Mi cambio mental absoluto</span>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="mobile-accordion-content journey-accordion-content">
+                    <div class="journey-accordion-text">
+                        <p><strong>Con Lasser todo cambió.</strong></p>
+                        <p>No solo empecé a ganar: <strong>fui campeona nacional.</strong></p>
+                        <p>Él me mostró lo que realmente significa la disciplina, la resiliencia y la importancia de
+                            confiar en ti misma.</p>
+                        <p><strong>Lasser fue mi mayor maestro mental.</strong></p>
+                    </div>
+                    <div class="journey-accordion-gallery">
+                        <img src="images/optimized/caballos/Laser/PHOTO-2025-12-02-16-50-44.webp" alt="Lasser">
+                    </div>
+                </div>
+
+                <!-- Black Panther (Lolo) -->
+                <button class="mobile-accordion-toggle journey-accordion-toggle highlight"
+                    onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="journey-accordion-icon">🐆</span>
+                        <div class="toggle-info">
+                            <span class="toggle-title">Black Panther (Lolo)</span>
+                            <span class="toggle-subtitle">El sueño que sí se cumplió</span>
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="mobile-accordion-content journey-accordion-content">
+                    <div class="journey-accordion-text">
+                        <p><strong>Black Panther siguió ese legado.</strong></p>
+                        <p>Durante un tiempo fue el aprendiz de Lasser, un potro lleno de corazón.</p>
+                        <p>Verlo crecer fue un privilegio: conectar con él me enseñó que los logros más grandes no son
+                            siempre en la pista, sino en casa, en los pequeños avances.</p>
+                        <p><strong>Con él cumplí sueños que pensé imposibles: también fuimos campeones
+                                nacionales.</strong></p>
+                        <p class="journey-final-text">🏆 Saltar 1.50 y entender que no tienes límites cuando confías en
+                            tu camino.</p>
+                    </div>
+                    <div class="journey-accordion-gallery">
+                        <img src="images/optimized/caballos/Black Panther/WhatsApp Image 2025-12-02 at 16.49.00.webp"
+                            alt="Black Panther">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section (keeping the multi-step form) -->
+    <section class="section section-waitlist-new" id="waitlist">
+        <div class="container">
+            <div class="waitlist-wrapper">
+                <div class="waitlist-info">
+                    <span class="section-label" data-i18n="waitlist.label">Únete</span>
+                    <h2 class="section-title-large"><span data-i18n="waitlist.title">Los cupos actuales ya se encuentran
+                            agotados</span></h2>
+                    <div class="divider-gold"></div>
+                    <p class="text-large" data-i18n="waitlist.description">
+                        Si quieres asegurar tu lugar en la próxima apertura, déjame aquí tus datos y serás de los
+                        primeros en recibir acceso cuando se abran nuevos espacios.
+                    </p>
+
+                    <div class="waitlist-benefits-new">
+                        <h3 class="benefits-title-new" data-i18n="waitlist.benefitsTitle">Beneficios del Waitlist:</h3>
+                        <ul class="benefits-list-new">
+                            <li class="benefit-item-new">
+                                <span class="benefit-icon-new">✓</span>
+                                <span data-i18n="waitlist.benefit1">Acceso anticipado a los nuevos cupos</span>
+                            </li>
+                            <li class="benefit-item-new">
+                                <span class="benefit-icon-new">✓</span>
+                                <span data-i18n="waitlist.benefit2">Sesión Piloto totalmente gratuita</span>
+                            </li>
+                            <li class="benefit-item-new">
+                                <span class="benefit-icon-new">✓</span>
+                                <span data-i18n="waitlist.benefit3">Prioridad para escoger horarios</span>
+                            </li>
+                            <li class="benefit-item-new">
+                                <span class="benefit-icon-new">✓</span>
+                                <span data-i18n="waitlist.benefit4">Beneficios exclusivos</span>
+                            </li>
+                        </ul>
+                        <p class="waitlist-note" data-i18n="waitlist.plansNote">*Estos beneficios aplican solo para los
+                            planes de $80 y $110 USD</p>
+                    </div>
+                </div>
+
+                <div class="waitlist-form-container">
+                    <form class="waitlist-form-new" id="waitlistForm">
+                        <!-- Progress Indicators -->
+                        <div class="form-progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="form-step-counter">
+                            <span id="currentStepNum">1</span> <span data-i18n="form.stepCounter">de</span> <span
+                                id="totalStepsNum">13</span>
+                        </div>
+
+                        <!-- Step 1: Nombre -->
+                        <div class="form-step-content active" data-step="1">
+                            <h3 class="form-step-title" data-i18n="form.step1.title">¿Cuál es tu nombre?</h3>
+                            <div class="form-group">
+                                <input type="text" id="nombre" name="nombre" class="form-input-large"
+                                    placeholder="Escribe tu nombre completo"
+                                    data-i18n-placeholder="form.step1.placeholder" required>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Email -->
+                        <div class="form-step-content" data-step="2">
+                            <h3 class="form-step-title" data-i18n="form.step2.title">¿Cuál es tu email?</h3>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" class="form-input-large"
+                                    placeholder="tu@email.com" data-i18n-placeholder="form.step2.placeholder" required>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: País -->
+                        <div class="form-step-content" data-step="3">
+                            <h3 class="form-step-title" data-i18n="form.step3.title">¿En qué país te encuentras?</h3>
+                            <div class="form-group">
+                                <input type="text" id="pais" name="pais" class="form-input-large"
+                                    placeholder="Escribe tu país" data-i18n-placeholder="form.step3.placeholder"
+                                    required>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Teléfono -->
+                        <div class="form-step-content" data-step="4">
+                            <h3 class="form-step-title" data-i18n="form.step4.title">¿Cuál es tu número de WhatsApp?
+                            </h3>
+                            <div class="form-group">
+                                <input type="tel" id="telefono" name="telefono" class="form-input-large"
+                                    placeholder="+57 300 123 4567" data-i18n-placeholder="form.step4.placeholder"
+                                    required>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Tiempo montando -->
+                        <div class="form-step-content" data-step="5">
+                            <h3 class="form-step-title" data-i18n="form.step5.title">¿Cuánto tiempo llevas montando?
+                            </h3>
+                            <div class="form-radio-group-large">
+                                <label class="radio-option-large">
+                                    <input type="radio" name="experiencia" value="menos-1-ano" required>
+                                    <span data-i18n="form.step5.option1">Menos de 1 año</span>
+                                </label>
+                                <label class="radio-option-large">
+                                    <input type="radio" name="experiencia" value="1-3-anos">
+                                    <span data-i18n="form.step5.option2">1-3 años</span>
+                                </label>
+                                <label class="radio-option-large">
+                                    <input type="radio" name="experiencia" value="3-5-anos">
+                                    <span data-i18n="form.step5.option3">3-5 años</span>
+                                </label>
+                                <label class="radio-option-large">
+                                    <input type="radio" name="experiencia" value="mas-5-anos">
+                                    <span data-i18n="form.step5.option4">Más de 5 años</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 6: Disciplina -->
+                        <div class="form-step-content" data-step="6">
+                            <h3 class="form-step-title" data-i18n="form.step6.title">¿Qué disciplina practicas?</h3>
+                            <div class="form-radio-group-large">
+                                <label class="radio-option-large">
+                                    <input type="radio" name="disciplina" value="salto" required>
+                                    <span data-i18n="form.step6.option1">Salto</span>
+                                </label>
+                                <label class="radio-option-large">
+                                    <input type="radio" name="disciplina" value="doma">
+                                    <span data-i18n="form.step6.option2">Doma</span>
+                                </label>
+                                <label class="radio-option-large">
+                                    <input type="radio" name="disciplina" value="completo">
+                                    <span data-i18n="form.step6.option3">Completo</span>
+                                </label>
+                                <label class="radio-option-large">
+                                    <input type="radio" name="disciplina" value="endurance">
+                                    <span data-i18n="form.step6.option4">Endurance</span>
+                                </label>
+                                <label class="radio-option-large">
+                                    <input type="radio" name="disciplina" value="recreativo">
+                                    <span data-i18n="form.step6.option5">Recreativo</span>
+                                </label>
+                                <label class="radio-option-large">
+                                    <input type="radio" name="disciplina" value="otro">
+                                    <span data-i18n="form.step6.option6">Otro</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 7: Principal reto -->
+                        <div class="form-step-content" data-step="7">
+                            <h3 class="form-step-title" data-i18n="form.step7.title">¿Cuál es tu principal reto?</h3>
+                            <p class="form-step-description" data-i18n="form.step7.description">Puedes seleccionar más
+                                de uno</p>
+                            <div class="form-checkbox-group-large">
+                                <label class="checkbox-option-large">
+                                    <input type="checkbox" name="retos" value="miedo-caidas">
+                                    <span data-i18n="form.step7.option1">Miedo después de una caída</span>
+                                </label>
+                                <label class="checkbox-option-large">
+                                    <input type="checkbox" name="retos" value="bloqueos-mentales">
+                                    <span data-i18n="form.step7.option2">Bloqueos mentales</span>
+                                </label>
+                                <label class="checkbox-option-large">
+                                    <input type="checkbox" name="retos" value="falta-confianza">
+                                    <span data-i18n="form.step7.option3">Falta de confianza</span>
+                                </label>
+                                <label class="checkbox-option-large">
+                                    <input type="checkbox" name="retos" value="ansiedad">
+                                    <span data-i18n="form.step7.option4">Ansiedad antes de montar</span>
+                                </label>
+                                <label class="checkbox-option-large">
+                                    <input type="checkbox" name="retos" value="comparacion">
+                                    <span data-i18n="form.step7.option5">Comparación con otros jinetes</span>
+                                </label>
+                                <label class="checkbox-option-large">
+                                    <input type="checkbox" name="retos" value="estancamiento">
+                                    <span data-i18n="form.step7.option6">Sensación de estancamiento</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 8: Objetivos 3-6 meses -->
+                        <div class="form-step-content" data-step="8">
+                            <h3 class="form-step-title" data-i18n="form.step8.title">¿Qué te gustaría lograr en los
+                                próximos 3-6 meses?</h3>
+                            <div class="form-group">
+                                <textarea id="objetivo" name="objetivo" class="form-textarea-large" rows="6"
+                                    placeholder="Describe tu objetivo principal..."
+                                    data-i18n-placeholder="form.step8.placeholder" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Step 9: Motivación -->
+                        <div class="form-step-content" data-step="9">
+                            <h3 class="form-step-title" data-i18n="form.step9.title">¿Qué te motiva a buscar
+                                acompañamiento mental en este momento?</h3>
+                            <div class="form-group">
+                                <textarea id="motivacion" name="motivacion" class="form-textarea-large" rows="6"
+                                    placeholder="Cuéntame qué te llevó a buscar este acompañamiento..."
+                                    data-i18n-placeholder="form.step9.placeholder" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Step 10: Coaching previo -->
+                        <div class="form-step-content" data-step="10">
+                            <h3 class="form-step-title" data-i18n="form.step10.title">¿Has hecho antes algún proceso de
+                                coaching o acompañamiento mental?</h3>
+                            <div class="form-radio-group-large">
+                                <label class="radio-option-large">
+                                    <input type="radio" name="coaching_previo" value="si" required>
+                                    <span data-i18n="form.step10.option1">Sí</span>
+                                </label>
+                                <label class="radio-option-large">
+                                    <input type="radio" name="coaching_previo" value="no">
+                                    <span data-i18n="form.step10.option2">No</span>
+                                </label>
+                                <label class="radio-option-large">
+                                    <input type="radio" name="coaching_previo" value="un-poco">
+                                    <span data-i18n="form.step10.option3">Un poco, pero no de forma constante</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 11: Proceso ideal -->
+                        <div class="form-step-content" data-step="11">
+                            <h3 class="form-step-title" data-i18n="form.step11.title">¿Cómo te gustaría que fuera tu
+                                proceso ideal?</h3>
+                            <div class="form-group">
+                                <textarea id="proceso_ideal" name="proceso_ideal" class="form-textarea-large" rows="6"
+                                    placeholder="Describe cómo imaginas tu proceso ideal..."
+                                    data-i18n-placeholder="form.step11.placeholder" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Step 12: Comentarios adicionales -->
+                        <div class="form-step-content" data-step="12">
+                            <h3 class="form-step-title" data-i18n="form.step12.title">¿Hay algo adicional que quieras
+                                contarme antes de tu sesión?</h3>
+                            <p class="form-step-description" data-i18n="form.step12.description">¿Hay algo que le
+                                quieres comentar a Nicole?</p>
+                            <div class="form-group">
+                                <textarea id="comentarios" name="comentarios" class="form-textarea-large" rows="6"
+                                    placeholder="Escribe aquí cualquier comentario adicional (opcional)"
+                                    data-i18n-placeholder="form.step12.placeholder"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Step 13: Confirmación -->
+                        <div class="form-step-content" data-step="13">
+                            <div class="form-final-image">
+                                <img src="images/optimized/fotos/WhatsApp Image 2025-11-24 at 11.27.43.webp"
+                                    alt="Ecuestre">
+                            </div>
+                            <h3 class="form-step-title-final" data-i18n="form.step13.title">Gracias por abrir este
+                                espacio conmigo</h3>
+                            <p class="form-final-message" data-i18n="form.step13.message">Ya diste el primer paso para
+                                reconectar con tu confianza y sentir nuevamente tranquilidad arriba del caballo. Muy
+                                pronto recibirás la confirmación de tu sesión.</p>
+                            <div class="form-summary-final" id="formSummary"></div>
+                            <div class="form-group">
+                                <label class="checkbox-option-large">
+                                    <input type="checkbox" name="acepto" id="acepto" required>
+                                    <span data-i18n="form.step13.checkbox">Acepto recibir comunicaciones sobre Panther
+                                        Path</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="form-navigation-new">
+                            <button type="button" class="btn-form-prev" id="prevBtn" style="display: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                                <span data-i18n="form.prevBtn">Anterior</span>
+                            </button>
+                            <button type="button" class="btn-form-next" id="nextBtn">
+                                <span data-i18n="form.nextBtn">Siguiente</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-form-submit" id="submitBtn"
+                                style="display: none;" data-i18n="form.submitBtn">
+                                Enviar y Agendar Sesión
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="success-message" id="successMessage">
+                        <div class="success-icon">✓</div>
+                        <h3 class="success-title" data-i18n="form.success.title">¡Gracias por tu interés!</h3>
+                        <p class="success-text" data-i18n="form.success.message">Estoy emocionada de acompañarte en tu
+                            crecimiento ecuestre. Te contactaremos pronto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planes Section -->
+    <section class="section section-planes-new" id="planes">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label" data-i18n="plans.label">Inversión</span>
+                <h2 class="section-title-large"><span data-i18n="plans.title">Planes Panther Path</span></h2>
+                <div class="divider-gold-center"></div>
+                <p class="section-description-large" data-i18n="plans.description">Cada sesión es guiada personalmente
+                    por mí, de forma 1:1, adaptada
+                    a tu nivel, tus retos y tus metas.</p>
+            </div>
+
+            <div class="planes-grid-new">
+                <div class="plan-card-new">
+                    <div class="plan-header-new">
+                        <h3 class="plan-title-new" data-i18n="plans.plan1.name">Sesión Individual</h3>
+                        <div class="plan-price-new">
+                            <span class="price-currency-new">USD</span>
+                            <span class="price-amount-new">$25</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features-new">
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan1.feature1">1 sesión 1:1 de 45
+                                min</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan1.feature2">Diagnóstico
+                                inicial</span></li>
+                        <li><span class="check">✗</span> <span data-i18n="plans.plan1.feature3">Sin seguimiento
+                                posterior</span></li>
+                        <li><span class="check">✗</span> <span data-i18n="plans.plan1.feature4">Sin grabación de la
+                                sesión</span></li>
+                        <li><span class="note">💡</span> <span data-i18n="plans.plan1.feature5">Ideal para consultas
+                                rápidas</span></li>
+                    </ul>
+                </div>
+
+                <div class="plan-card-new">
+                    <div class="plan-header-new">
+                        <h3 class="plan-title-new" data-i18n="plans.plan2.name">Paquete de 4 Sesiones</h3>
+                        <div class="plan-price-new">
+                            <span class="price-currency-new">USD</span>
+                            <span class="price-amount-new">$80</span>
+                        </div>
+                        <div class="plan-savings" data-i18n="plans.plan2.savings">Ahorras $20 (20% OFF)</div>
+                    </div>
+                    <ul class="plan-features-new">
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan2.feature1">4 sesiones 1:1 (45
+                                min)</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan2.feature2">Soporte por WhatsApp
+                                entre sesiones</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan2.feature3">Grabación de las
+                                llamadas</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan2.feature4">Plan de acción
+                                PDF</span></li>
+                    </ul>
+                </div>
+
+                <div class="plan-card-new popular">
+                    <div class="popular-badge-new" data-i18n="plans.plan3.badge">Más Popular</div>
+                    <div class="plan-header-new">
+                        <h3 class="plan-title-new" data-i18n="plans.plan3.name">Paquete de 6 Sesiones</h3>
+                        <div class="plan-price-new">
+                            <span class="price-currency-new">USD</span>
+                            <span class="price-amount-new">$110</span>
+                        </div>
+                        <div class="plan-savings" data-i18n="plans.plan3.savings">Ahorras $40 (27% OFF)</div>
+                    </div>
+                    <ul class="plan-features-new">
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan3.feature1">6 sesiones 1:1 (45
+                                min)</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan3.feature2">Soporte por WhatsApp
+                                entre sesiones</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan3.feature3">Grabación de las
+                                llamadas</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan3.feature4">Plan de acción
+                                PDF</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan3.feature5">Material descargable
+                                (ejercicios mentales, journaling para jinetes, herramientas de regulación)</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan3.feature6">2 sesiones Check-in de
+                                30 min</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mobile Accordion for Plans -->
+            <div class="mobile-accordion-container" id="planesAccordion">
+                <!-- Plan 1 -->
+                <button class="mobile-accordion-toggle" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="toggle-number">$25</span>
+                        <span class="toggle-title" data-i18n="plans.plan1.name">Sesión Individual</span>
+                    </div>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-accordion-content">
+                    <ul class="mobile-plan-features">
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan1.feature1">1 sesión 1:1 de 45
+                                min</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan1.feature2">Diagnóstico
+                                inicial</span></li>
+                        <li><span class="check">✗</span> <span data-i18n="plans.plan1.feature3">Sin seguimiento
+                                posterior</span></li>
+                        <li><span class="check">✗</span> <span data-i18n="plans.plan1.feature4">Sin grabación de la
+                                sesión</span></li>
+                        <li><span class="note">💡</span> <span data-i18n="plans.plan1.feature5">Ideal para consultas
+                                rápidas</span></li>
+                    </ul>
+                </div>
+
+                <!-- Plan 2 -->
+                <button class="mobile-accordion-toggle" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="toggle-number">$80</span>
+                        <span class="toggle-title" data-i18n="plans.plan2.name">Paquete de 4 Sesiones</span>
+                    </div>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-accordion-content">
+                    <div class="plan-savings-mobile" data-i18n="plans.plan2.savings">Ahorras $20 (20% OFF)</div>
+                    <ul class="mobile-plan-features">
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan2.feature1">4 sesiones 1:1 (45
+                                min)</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan2.feature2">Soporte por WhatsApp
+                                entre sesiones</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan2.feature3">Grabación de las
+                                llamadas</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan2.feature4">Plan de acción
+                                PDF</span></li>
+                    </ul>
+                </div>
+
+                <!-- Plan 3 - Popular -->
+                <button class="mobile-accordion-toggle popular-mobile" onclick="toggleAccordion(this)">
+                    <div class="toggle-header">
+                        <span class="toggle-number popular-price">$110</span>
+                        <span class="toggle-title" data-i18n="plans.plan3.name">Paquete de 6 Sesiones</span>
+                        <span class="popular-badge-mobile" data-i18n="plans.plan3.badge">Más Popular</span>
+                    </div>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-accordion-content">
+                    <div class="plan-savings-mobile" data-i18n="plans.plan3.savings">Ahorras $40 (27% OFF)</div>
+                    <ul class="mobile-plan-features">
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan3.feature1">6 sesiones 1:1 (45
+                                min)</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan3.feature2">Soporte por WhatsApp
+                                entre sesiones</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan3.feature3">Grabación de las
+                                llamadas</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan3.feature4">Plan de acción
+                                PDF</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan3.feature5">Material
+                                descargable</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="plans.plan3.feature6">2 sesiones Check-in de
+                                30 min</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="footer-cta">
+            <div class="container">
+                <h2 class="footer-cta-title" data-i18n="footer.ctaTitle">Empieza tu proceso</h2>
+                <p class="footer-cta-subtitle" data-i18n="footer.ctaSubtitle">Asegura tu lugar en los próximos cupos</p>
+                <a href="#waitlist" class="btn btn-primary btn-large" data-i18n="footer.ctaButton">Únete al Waitlist</a>
+            </div>
+        </div>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3 class="footer-logo">PANTHER PATH</h3>
+                        <p class="footer-description" data-i18n="footer.description">Acompañamiento mental personalizado
+                            para jinetes que
+                            buscan recuperar su confianza y disfrutar el deporte nuevamente.</p>
+                    </div>
+                    <div class="footer-col footer-nav-col">
+                        <h4 class="footer-title" data-i18n="footer.navigationTitle">Navegación</h4>
+                        <ul class="footer-links">
+                            <li><a href="#sobre" data-i18n="footer.aboutProgram">Sobre el Programa</a></li>
+                            <li><a href="#beneficios" data-i18n="footer.benefits">Beneficios</a></li>
+                            <li><a href="#proceso" data-i18n="footer.howItWorks">Cómo Funciona</a></li>
+                            <li><a href="#planes" data-i18n="footer.plans">Planes</a></li>
+                            <li><a href="#waitlist" data-i18n="footer.waitlist">Waitlist</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-title" data-i18n="footer.contactTitle">Contacto</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <span>info@pantherpath.com</span>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg>
+                                <span>+57 300 123 4567</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-title" data-i18n="footer.followTitle">Síguenos</h4>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="WhatsApp">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="footer-copyright" data-i18n="footer.copyright">&copy; 2025 Panther Path. Todos los derechos
+                    reservados.</p>
+                <div class="footer-legal">
+                    <a href="privacidad.html" data-i18n="footer.privacy">Política de Privacidad</a>
+                    <span>•</span>
+                    <a href="terminos.html" data-i18n="footer.terms">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-overlay"></div>
+        <div class="video-modal-content">
+            <button class="video-modal-close" aria-label="Cerrar video">&times;</button>
+            <div class="video-container">
+                <iframe id="videoIframe" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/573001234567?text=Hola!%20Me%20interesa%20Panther%20Path" target="_blank"
+            class="whatsapp-button">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.333c-2.547 0-5.053-0.727-7.2-2.093l-0.52-0.32-5.36 1.44 1.44-5.36-0.347-0.533c-1.413-2.173-2.147-4.693-2.147-7.2 0-7.36 5.973-13.333 13.333-13.333s13.333 5.973 13.333 13.333-5.973 13.333-13.333 13.333zM22.667 18.667c-0.373-0.187-2.2-1.093-2.547-1.213-0.347-0.133-0.6-0.187-0.853 0.187s-0.973 1.213-1.2 1.467c-0.213 0.253-0.44 0.28-0.813 0.093s-1.587-0.587-3.027-1.867c-1.12-0.987-1.867-2.213-2.093-2.587s-0.027-0.573 0.16-0.76c0.173-0.16 0.373-0.44 0.56-0.653 0.187-0.213 0.253-0.373 0.373-0.627 0.133-0.253 0.067-0.467-0.027-0.653s-0.853-2.053-1.173-2.813c-0.307-0.747-0.627-0.64-0.853-0.653-0.213-0.013-0.467-0.013-0.72-0.013s-0.653 0.093-0.987 0.467c-0.347 0.373-1.307 1.28-1.307 3.12s1.333 3.613 1.52 3.867c0.187 0.253 2.613 4.027 6.373 5.627 0.893 0.387 1.587 0.613 2.133 0.787 0.893 0.28 1.707 0.24 2.347 0.147 0.72-0.107 2.2-0.907 2.507-1.773s0.307-1.627 0.213-1.773c-0.080-0.147-0.333-0.24-0.707-0.427z" />
+            </svg>
+        </a>
+        <div class="whatsapp-tooltip" data-i18n="whatsapp.tooltip">¿Tienes preguntas? Escríbenos</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

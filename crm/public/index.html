@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panther Path CRM - Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0A0A0A;
+            color: #FFFFFF;
+        }
+
+        /* Login Page */
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .login-box {
+            background: #141414;
+            padding: 3rem;
+            border: 1px solid #2A2A2A;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .login-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-logo h1 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #C9A961 0%, #D4AF37 50%, #F4D03F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: #B8B8B8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.875rem;
+            background: #1F1F1F;
+            border: 2px solid #2A2A2A;
+            color: #FFFFFF;
+            font-size: 1rem;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #D4AF37;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #C9A961 0%, #D4AF37 50%, #F4D03F 100%);
+            color: #000000;
+            border: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .error-message {
+            background: rgba(255, 68, 68, 0.1);
+            border: 1px solid #FF4444;
+            color: #FF4444;
+            padding: 0.875rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            display: none;
+        }
+
+        .dashboard.active {
+            display: block;
+        }
+
+        .header {
+            background: #141414;
+            border-bottom: 1px solid #2A2A2A;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #C9A961 0%, #D4AF37 50%, #F4D03F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-user {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-logout {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid #D4AF37;
+            color: #D4AF37;
+            cursor: pointer;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-logout:hover {
+            background: #D4AF37;
+            color: #000000;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .stat-card {
+            background: #141414;
+            border: 1px solid #2A2A2A;
+            padding: 1.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #B8B8B8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #C9A961 0%, #D4AF37 50%, #F4D03F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contacts-section {
+            padding: 0 2rem 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #D4AF37;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid #2A2A2A;
+            color: #B8B8B8;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        .filter-btn.active {
+            background: #D4AF37;
+            color: #000000;
+            border-color: #D4AF37;
+        }
+
+        .contacts-table {
+            width: 100%;
+            background: #141414;
+            border: 1px solid #2A2A2A;
+        }
+
+        .contacts-table th,
+        .contacts-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #2A2A2A;
+        }
+
+        .contacts-table th {
+            background: #1F1F1F;
+            color: #D4AF37;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contacts-table tr:hover {
+            background: #1A1A1A;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+
+        .status-nuevo {
+            background: #4A90E2;
+            color: #FFF;
+        }
+
+        .status-contactado {
+            background: #F5A623;
+            color: #000;
+        }
+
+        .status-en-proceso {
+            background: #7ED321;
+            color: #000;
+        }
+
+        .status-convertido {
+            background: #50E3C2;
+            color: #000;
+        }
+
+        .status-no-interesado {
+            background: #D0021B;
+            color: #FFF;
+        }
+
+        .btn-action {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid #D4AF37;
+            color: #D4AF37;
+            cursor: pointer;
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+        }
+
+        .btn-action:hover {
+            background: #D4AF37;
+            color: #000000;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background: #141414;
+            border: 1px solid #2A2A2A;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            color: #D4AF37;
+        }
+
+        .btn-close {
+            background: none;
+            border: none;
+            color: #B8B8B8;
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .contact-detail {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-detail-label {
+            font-size: 0.875rem;
+            color: #B8B8B8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-detail-value {
+            color: #FFFFFF;
+            font-size: 1rem;
+        }
+
+        .notes-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #2A2A2A;
+        }
+
+        .note-item {
+            background: #1F1F1F;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 3px solid #D4AF37;
+        }
+
+        .note-meta {
+            font-size: 0.75rem;
+            color: #B8B8B8;
+            margin-bottom: 0.5rem;
+        }
+
+        .note-text {
+            color: #FFFFFF;
+        }
+
+        .add-note-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .add-note-form textarea {
+            flex: 1;
+            padding: 0.75rem;
+            background: #1F1F1F;
+            border: 1px solid #2A2A2A;
+            color: #FFFFFF;
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .add-note-form textarea:focus {
+            outline: none;
+            border-color: #D4AF37;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Login Page -->
+    <div id="loginPage" class="login-container">
+        <div class="login-box">
+            <div class="login-logo">
+                <h1>PANTHER PATH</h1>
+                <p style="color: #B8B8B8; margin-top: 0.5rem;">CRM Dashboard</p>
+            </div>
+            <div id="loginError" class="error-message" style="display: none;"></div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Usuario</label>
+                    <input type="text" id="username" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" id="password" class="form-input" required>
+                </div>
+                <button type="submit" class="btn">Iniciar Sesión</button>
+            </form>
+            <p style="margin-top: 1.5rem; font-size: 0.875rem; color: #B8B8B8; text-align: center;">
+                Default: admin / admin123
+            </p>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard">
+        <div class="header">
+            <div class="header-logo">PANTHER PATH CRM</div>
+            <div class="header-user">
+                <span id="currentUser" style="color: #B8B8B8;"></span>
+                <button class="btn-logout" onclick="logout()">Cerrar Sesión</button>
+            </div>
+        </div>
+
+        <div class="stats-grid" id="statsGrid">
+            <!-- Stats will be loaded here -->
+        </div>
+
+        <div class="contacts-section">
+            <div class="section-header">
+                <h2 class="section-title">Contactos</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterContacts('all')">Todos</button>
+                    <button class="filter-btn" onclick="filterContacts('nuevo')">Nuevos</button>
+                    <button class="filter-btn" onclick="filterContacts('contactado')">Contactados</button>
+                    <button class="filter-btn" onclick="filterContacts('en-proceso')">En Proceso</button>
+                    <button class="filter-btn" onclick="filterContacts('convertido')">Convertidos</button>
+                </div>
+            </div>
+
+            <table class="contacts-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>País</th>
+                        <th>Experiencia</th>
+                        <th>Estado</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="contactsTableBody">
+                    <!-- Contacts will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Contact Detail Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Detalle del Contacto</h2>
+                <button class="btn-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="contactDetailContent">
+                <!-- Contact details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
