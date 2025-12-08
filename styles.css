@@ -3149,9 +3149,9 @@ a:focus {
 
 .form-final-image {
     width: 100%;
-    height: 200px;
-    margin-bottom: var(--spacing-md);
-    border-radius: 0;
+    height: 150px;
+    margin-bottom: var(--spacing-sm);
+    border-radius: 8px;
     overflow: hidden;
 }
 
@@ -3164,29 +3164,30 @@ a:focus {
 
 .form-step-title-final {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--color-secondary);
     text-align: center;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
 }
 
 .form-final-message {
     text-align: center;
     color: var(--color-text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: var(--spacing-md);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing-sm);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .form-summary-final {
-    background: rgba(212, 175, 55, 0.1);
-    padding: var(--spacing-md);
-    border-left: 3px solid var(--color-secondary);
-    margin-bottom: var(--spacing-md);
-    font-size: 0.875rem;
+    background: rgba(212, 175, 55, 0.05);
+    padding: var(--spacing-sm);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.85rem;
+    /* Removed yellow border line */
 }
 
 .form-navigation-new {
