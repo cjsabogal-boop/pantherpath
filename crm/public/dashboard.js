@@ -195,7 +195,7 @@ function renderContacts() {
             <td>${contact.pais || '-'}</td>
             <td>${contact.experiencia || '-'}</td>
             <td>
-                <select class="status-select status-${contact.status}" onchange="quickUpdateStatus('${contact.id}', this.value)">
+                <select class="status-select status-${contact.status}" onchange="quickUpdateStatus('${contact.id}', this.value, this)">
                     <option value="nuevo" ${contact.status === 'nuevo' ? 'selected' : ''}>🔵 Nuevo</option>
                     <option value="contactado" ${contact.status === 'contactado' ? 'selected' : ''}>🟡 Contactado</option>
                     <option value="en-proceso" ${contact.status === 'en-proceso' ? 'selected' : ''}>🟢 En Proceso</option>
@@ -212,22 +212,22 @@ function renderContacts() {
 }
 
 // Filter contacts
-function filterContacts(status) {
+function filterContacts(status, btn) {
     currentFilter = status;
 
     // Update active button
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.remove('active');
+    document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('active');
     });
-    event.target.classList.add('active');
+    if (btn) btn.classList.add('active');
 
     renderContacts();
 }
 
 // Quick update status from table
-async function quickUpdateStatus(id, newStatus) {
+async function quickUpdateStatus(id, newStatus, selectElement) {
     try {
-        await fetch(`${API_URL}/contacts/${id}`, {
+        const response = await fetch(`${API_URL}/contacts/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -236,13 +236,22 @@ async function quickUpdateStatus(id, newStatus) {
             body: JSON.stringify({ status: newStatus })
         });
 
+        if (!response.ok) {
+            throw new Error('Error en la respuesta del servidor');
+        }
+
         loadStats();
         // Show brief confirmation
-        const row = event.target.closest('tr');
-        row.style.background = 'rgba(212, 175, 55, 0.2)';
-        setTimeout(() => {
-            row.style.background = '';
-        }, 500);
+        if (selectElement) {
+            const row = selectElement.closest('tr');
+            if (row) {
+                row.style.background = 'rgba(212, 175, 55, 0.2)';
+                setTimeout(() => {
+                    row.style.background = '';
+                }, 500);
+            }
+        }
+        console.log('Estado actualizado:', newStatus);
     } catch (error) {
         console.error('Error updating status:', error);
         alert('Error al actualizar el estado');
