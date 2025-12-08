@@ -1009,9 +1009,44 @@
                         <div class="form-step-content" data-step="3">
                             <h3 class="form-step-title" data-i18n="form.step3.title">¿En qué país te encuentras?</h3>
                             <div class="form-group">
-                                <input type="text" id="pais" name="pais" class="form-input-large"
-                                    placeholder="Escribe tu país" data-i18n-placeholder="form.step3.placeholder"
-                                    required>
+                                <select id="pais" name="pais" class="form-input-large" required>
+                                    <option value="" disabled selected data-i18n="form.step3.placeholder">Selecciona tu
+                                        país</option>
+                                    <optgroup label="América">
+                                        <option value="Argentina">🇦🇷 Argentina</option>
+                                        <option value="Bolivia">🇧🇴 Bolivia</option>
+                                        <option value="Brasil">🇧🇷 Brasil</option>
+                                        <option value="Canadá">🇨🇦 Canadá</option>
+                                        <option value="Chile">🇨🇱 Chile</option>
+                                        <option value="Colombia">🇨🇴 Colombia</option>
+                                        <option value="Costa Rica">🇨🇷 Costa Rica</option>
+                                        <option value="Ecuador">🇪🇨 Ecuador</option>
+                                        <option value="El Salvador">🇸🇻 El Salvador</option>
+                                        <option value="Estados Unidos">🇺🇸 Estados Unidos</option>
+                                        <option value="Guatemala">🇬🇹 Guatemala</option>
+                                        <option value="Honduras">🇭🇳 Honduras</option>
+                                        <option value="México">🇲🇽 México</option>
+                                        <option value="Nicaragua">🇳🇮 Nicaragua</option>
+                                        <option value="Panamá">🇵🇦 Panamá</option>
+                                        <option value="Paraguay">🇵🇾 Paraguay</option>
+                                        <option value="Perú">🇵🇪 Perú</option>
+                                        <option value="Puerto Rico">🇵🇷 Puerto Rico</option>
+                                        <option value="República Dominicana">🇩🇴 República Dominicana</option>
+                                        <option value="Uruguay">🇺🇾 Uruguay</option>
+                                        <option value="Venezuela">🇻🇪 Venezuela</option>
+                                    </optgroup>
+                                    <optgroup label="Europa">
+                                        <option value="España">🇪🇸 España</option>
+                                        <option value="Portugal">🇵🇹 Portugal</option>
+                                        <option value="Francia">🇫🇷 Francia</option>
+                                        <option value="Alemania">🇩🇪 Alemania</option>
+                                        <option value="Italia">🇮🇹 Italia</option>
+                                        <option value="Reino Unido">🇬🇧 Reino Unido</option>
+                                    </optgroup>
+                                    <optgroup label="Otros">
+                                        <option value="Otro">🌍 Otro país</option>
+                                    </optgroup>
+                                </select>
                             </div>
                         </div>
 
