@@ -1207,9 +1207,8 @@ waitlistForm.addEventListener('submit', async (e) => {
 
 // Submit to waitlist (CRM Backend Integration - only upload to hosting)
 async function submitToWaitlist(data) {
-    // Detect if the site is served from the root or under /crm
-    const basePath = window.location.pathname.startsWith('/crm') ? '/crm' : '';
-    const CRM_API_URL = `${basePath}/api/contacts`;
+    // Always point to the CRM API at /crm/api/contacts
+    const CRM_API_URL = '/crm/api/contacts';
 
     try {
         const response = await fetch(CRM_API_URL, {
