@@ -1163,6 +1163,34 @@ nextBtn.addEventListener('click', () => {
     }
 });
 
+// Handle Enter key to go to next step
+waitlistForm.addEventListener('keydown', (e) => {
+    // If Enter is pressed and it's not on a textarea
+    if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault(); // Prevent form submission
+
+        // If we're not on the last step, go to next step
+        if (currentStep < totalSteps) {
+            if (validateStep(currentStep)) {
+                saveStepData(currentStep);
+                currentStep++;
+                showStep(currentStep);
+                updateButtons();
+                updateProgress();
+
+                // Focus on the first input of the new step
+                setTimeout(() => {
+                    const currentContent = document.querySelector(`.form-step-content[data-step="${currentStep}"]`);
+                    const firstInput = currentContent.querySelector('input, select, textarea');
+                    if (firstInput) {
+                        firstInput.focus();
+                    }
+                }, 100);
+            }
+        }
+    }
+});
+
 // Previous button click
 prevBtn.addEventListener('click', () => {
     saveStepData(currentStep);
