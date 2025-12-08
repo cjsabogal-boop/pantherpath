@@ -400,6 +400,150 @@
             outline: none;
             border-color: #D4AF37;
         }
+
+        /* Status Select in Table */
+        .status-select {
+            padding: 0.35rem 0.5rem;
+            background: #1F1F1F;
+            border: 1px solid #2A2A2A;
+            color: #FFF;
+            font-size: 0.8rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .status-select:focus {
+            outline: none;
+            border-color: #D4AF37;
+        }
+
+        /* Improved Modal */
+        .modal-content {
+            background: #141414;
+            border: 1px solid #2A2A2A;
+            padding: 2rem;
+            max-width: 1000px;
+            width: 95%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 8px;
+        }
+
+        .contact-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .detail-section {
+            background: #1A1A1A;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #2A2A2A;
+        }
+
+        .detail-section.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .section-subtitle {
+            color: #D4AF37;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #2A2A2A;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #252525;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .detail-value {
+            color: #FFF;
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .detail-box {
+            background: #252525;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #CCC;
+        }
+
+        .detail-box strong {
+            color: #D4AF37;
+        }
+
+        .status-control {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .status-select-large {
+            padding: 0.75rem 1rem;
+            background: #1F1F1F;
+            border: 2px solid #D4AF37;
+            color: #FFF;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 6px;
+            min-width: 200px;
+        }
+
+        .btn-save-status {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #C9A961 0%, #D4AF37 50%, #F4D03F 100%);
+            color: #000;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: transform 0.2s;
+        }
+
+        .btn-save-status:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-add-note {
+            padding: 0.75rem 1.5rem;
+            background: #D4AF37;
+            color: #000;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+
+        .notes-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #2A2A2A;
+        }
     </style>
 </head>
 

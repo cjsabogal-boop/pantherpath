@@ -97,33 +97,67 @@ async function loadStats() {
         const statsHTML = `
             <div class="stat-card">
                 <div class="stat-label">Total Contactos</div>
-                <div class="stat-value">${stats.total}</div>
+                <div class="stat-value">${stats.total || 0}</div>
             </div>
             <div class="stat-card">
                 <div class="stat-label">Nuevos</div>
-                <div class="stat-value">${stats.nuevo}</div>
+                <div class="stat-value">${stats.nuevo || 0}</div>
             </div>
             <div class="stat-card">
                 <div class="stat-label">Contactados</div>
-                <div class="stat-value">${stats.contactado}</div>
+                <div class="stat-value">${stats.contactado || 0}</div>
             </div>
             <div class="stat-card">
                 <div class="stat-label">En Proceso</div>
-                <div class="stat-value">${stats.enProceso}</div>
+                <div class="stat-value">${stats.enProceso || 0}</div>
             </div>
             <div class="stat-card">
                 <div class="stat-label">Convertidos</div>
-                <div class="stat-value">${stats.convertido}</div>
+                <div class="stat-value">${stats.convertido || 0}</div>
             </div>
             <div class="stat-card">
                 <div class="stat-label">No Interesados</div>
-                <div class="stat-value">${stats.noInteresado}</div>
+                <div class="stat-value">${stats.noInteresado || 0}</div>
             </div>
         `;
 
         document.getElementById('statsGrid').innerHTML = statsHTML;
     } catch (error) {
         console.error('Error loading stats:', error);
+    }
+}
+
+// Format date safely
+function formatDate(dateStr) {
+    if (!dateStr) return 'N/A';
+    try {
+        const date = new Date(dateStr);
+        if (isNaN(date.getTime())) return 'N/A';
+        return date.toLocaleDateString('es-ES', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        });
+    } catch (e) {
+        return 'N/A';
+    }
+}
+
+// Format datetime safely
+function formatDateTime(dateStr) {
+    if (!dateStr) return 'N/A';
+    try {
+        const date = new Date(dateStr);
+        if (isNaN(date.getTime())) return 'N/A';
+        return date.toLocaleString('es-ES', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+    } catch (e) {
+        return 'N/A';
     }
 }
 
@@ -156,15 +190,22 @@ function renderContacts() {
 
     tbody.innerHTML = filtered.map(contact => `
         <tr>
-            <td>${contact.nombre}</td>
-            <td>${contact.email}</td>
-            <td>${contact.pais}</td>
-            <td>${contact.experiencia}</td>
-            <td><span class="status-badge status-${contact.status}">${contact.status}</span></td>
-            <td>${new Date(contact.createdAt).toLocaleDateString()}</td>
+            <td><strong>${contact.nombre || 'Sin nombre'}</strong></td>
+            <td>${contact.email || '-'}</td>
+            <td>${contact.pais || '-'}</td>
+            <td>${contact.experiencia || '-'}</td>
             <td>
-                <button class="btn-action" onclick="viewContact('${contact.id}')">Ver</button>
-                <button class="btn-action" onclick="updateStatus('${contact.id}')">Estado</button>
+                <select class="status-select status-${contact.status}" onchange="quickUpdateStatus('${contact.id}', this.value)">
+                    <option value="nuevo" ${contact.status === 'nuevo' ? 'selected' : ''}>🔵 Nuevo</option>
+                    <option value="contactado" ${contact.status === 'contactado' ? 'selected' : ''}>🟡 Contactado</option>
+                    <option value="en-proceso" ${contact.status === 'en-proceso' ? 'selected' : ''}>🟢 En Proceso</option>
+                    <option value="convertido" ${contact.status === 'convertido' ? 'selected' : ''}>✅ Convertido</option>
+                    <option value="no-interesado" ${contact.status === 'no-interesado' ? 'selected' : ''}>🔴 No Interesado</option>
+                </select>
+            </td>
+            <td>${formatDate(contact.created_at)}</td>
+            <td>
+                <button class="btn-action" onclick="viewContact('${contact.id}')">👁️ Ver Detalles</button>
             </td>
         </tr>
     `).join('');
@@ -183,6 +224,31 @@ function filterContacts(status) {
     renderContacts();
 }
 
+// Quick update status from table
+async function quickUpdateStatus(id, newStatus) {
+    try {
+        await fetch(`${API_URL}/contacts/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ status: newStatus })
+        });
+
+        loadStats();
+        // Show brief confirmation
+        const row = event.target.closest('tr');
+        row.style.background = 'rgba(212, 175, 55, 0.2)';
+        setTimeout(() => {
+            row.style.background = '';
+        }, 500);
+    } catch (error) {
+        console.error('Error updating status:', error);
+        alert('Error al actualizar el estado');
+    }
+}
+
 // View contact details
 async function viewContact(id) {
     try {
@@ -193,81 +259,102 @@ async function viewContact(id) {
         const contact = await response.json();
 
         const detailHTML = `
-            <div class="contact-detail">
-                <div class="contact-detail-label">Nombre</div>
-                <div class="contact-detail-value">${contact.nombre}</div>
-            </div>
-            <div class="contact-detail">
-                <div class="contact-detail-label">Email</div>
-                <div class="contact-detail-value">${contact.email}</div>
-            </div>
-            <div class="contact-detail">
-                <div class="contact-detail-label">País</div>
-                <div class="contact-detail-value">${contact.pais}</div>
-            </div>
-            <div class="contact-detail">
-                <div class="contact-detail-label">Teléfono</div>
-                <div class="contact-detail-value">${contact.telefono || 'No proporcionado'}</div>
-            </div>
-            <div class="contact-detail">
-                <div class="contact-detail-label">Experiencia</div>
-                <div class="contact-detail-value">${contact.experiencia}</div>
-            </div>
-            <div class="contact-detail">
-                <div class="contact-detail-label">Disciplina</div>
-                <div class="contact-detail-value">${contact.disciplina}</div>
-            </div>
-            <div class="contact-detail">
-                <div class="contact-detail-label">Retos</div>
-                <div class="contact-detail-value">${Array.isArray(contact.retos) ? contact.retos.join(', ') : contact.retos || 'No especificado'}</div>
-            </div>
-            <div class="contact-detail">
-                <div class="contact-detail-label">Objetivo</div>
-                <div class="contact-detail-value">${contact.objetivo || 'No especificado'}</div>
-            </div>
-            <div class="contact-detail">
-                <div class="contact-detail-label">Motivación</div>
-                <div class="contact-detail-value">${contact.motivacion || 'No especificado'}</div>
-            </div>
-            <div class="contact-detail">
-                <div class="contact-detail-label">Coaching Previo</div>
-                <div class="contact-detail-value">${contact.coaching_previo || 'No especificado'}</div>
-            </div>
-            <div class="contact-detail">
-                <div class="contact-detail-label">Proceso Ideal</div>
-                <div class="contact-detail-value">${contact.proceso_ideal || 'No especificado'}</div>
-            </div>
-            <div class="contact-detail">
-                <div class="contact-detail-label">Comentarios</div>
-                <div class="contact-detail-value">${contact.comentarios || 'Ninguno'}</div>
-            </div>
-            <div class="contact-detail">
-                <div class="contact-detail-label">Estado</div>
-                <div class="contact-detail-value">
-                    <select id="statusSelect" class="form-input" style="width: auto;">
-                        <option value="nuevo" ${contact.status === 'nuevo' ? 'selected' : ''}>Nuevo</option>
-                        <option value="contactado" ${contact.status === 'contactado' ? 'selected' : ''}>Contactado</option>
-                        <option value="en-proceso" ${contact.status === 'en-proceso' ? 'selected' : ''}>En Proceso</option>
-                        <option value="convertido" ${contact.status === 'convertido' ? 'selected' : ''}>Convertido</option>
-                        <option value="no-interesado" ${contact.status === 'no-interesado' ? 'selected' : ''}>No Interesado</option>
-                    </select>
-                    <button class="btn-action" onclick="saveStatus('${contact.id}')" style="margin-left: 1rem;">Guardar Estado</button>
+            <div class="contact-details-grid">
+                <div class="detail-section">
+                    <h4 class="section-subtitle">📋 Información Personal</h4>
+                    <div class="detail-row">
+                        <span class="detail-label">Nombre</span>
+                        <span class="detail-value">${contact.nombre || 'No especificado'}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Email</span>
+                        <span class="detail-value"><a href="mailto:${contact.email}" style="color: #D4AF37;">${contact.email || '-'}</a></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">País</span>
+                        <span class="detail-value">${contact.pais || '-'}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">WhatsApp</span>
+                        <span class="detail-value">
+                            ${contact.telefono ? `<a href="https://wa.me/${contact.telefono.replace(/[^0-9]/g, '')}" target="_blank" style="color: #25D366;">📱 ${contact.telefono}</a>` : 'No proporcionado'}
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="detail-section">
+                    <h4 class="section-subtitle">🐴 Perfil Ecuestre</h4>
+                    <div class="detail-row">
+                        <span class="detail-label">Experiencia</span>
+                        <span class="detail-value">${contact.experiencia || '-'}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Disciplina</span>
+                        <span class="detail-value">${contact.disciplina || '-'}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Coaching Previo</span>
+                        <span class="detail-value">${contact.coaching_previo || '-'}</span>
+                    </div>
                 </div>
             </div>
             
+            <div class="detail-section full-width">
+                <h4 class="section-subtitle">🎯 Retos y Objetivos</h4>
+                <div class="detail-box">
+                    <strong>Principales Retos:</strong><br>
+                    ${contact.retos || 'No especificado'}
+                </div>
+                <div class="detail-box">
+                    <strong>Objetivo a 3-6 meses:</strong><br>
+                    ${contact.objetivo || 'No especificado'}
+                </div>
+                <div class="detail-box">
+                    <strong>Motivación:</strong><br>
+                    ${contact.motivacion || 'No especificado'}
+                </div>
+                <div class="detail-box">
+                    <strong>Proceso Ideal:</strong><br>
+                    ${contact.proceso_ideal || 'No especificado'}
+                </div>
+                ${contact.comentarios ? `
+                <div class="detail-box">
+                    <strong>Comentarios Adicionales:</strong><br>
+                    ${contact.comentarios}
+                </div>
+                ` : ''}
+            </div>
+            
+            <div class="detail-section full-width">
+                <h4 class="section-subtitle">📊 Estado del Contacto</h4>
+                <div class="status-control">
+                    <select id="statusSelect" class="status-select-large">
+                        <option value="nuevo" ${contact.status === 'nuevo' ? 'selected' : ''}>🔵 Nuevo</option>
+                        <option value="contactado" ${contact.status === 'contactado' ? 'selected' : ''}>🟡 Contactado</option>
+                        <option value="en-proceso" ${contact.status === 'en-proceso' ? 'selected' : ''}>🟢 En Proceso</option>
+                        <option value="convertido" ${contact.status === 'convertido' ? 'selected' : ''}>✅ Convertido</option>
+                        <option value="no-interesado" ${contact.status === 'no-interesado' ? 'selected' : ''}>🔴 No Interesado</option>
+                    </select>
+                    <button class="btn-save-status" onclick="saveStatus('${contact.id}')">💾 Guardar Estado</button>
+                </div>
+                <p style="color: #888; font-size: 0.85rem; margin-top: 0.5rem;">
+                    Registrado: ${formatDateTime(contact.created_at)}
+                </p>
+            </div>
+            
             <div class="notes-section">
-                <h3 style="color: #D4AF37; margin-bottom: 1rem;">Notas de Seguimiento</h3>
+                <h4 class="section-subtitle">📝 Notas de Seguimiento</h4>
                 <div id="notesList">
                     ${contact.notes && contact.notes.length > 0 ? contact.notes.map(note => `
                         <div class="note-item">
-                            <div class="note-meta">${new Date(note.createdAt).toLocaleString()} - ${note.createdBy}</div>
+                            <div class="note-meta">${formatDateTime(note.created_at)} - ${note.created_by || 'admin'}</div>
                             <div class="note-text">${note.text}</div>
                         </div>
-                    `).join('') : '<p style="color: #B8B8B8;">No hay notas todavía</p>'}
+                    `).join('') : '<p style="color: #888;">No hay notas todavía</p>'}
                 </div>
                 <div class="add-note-form">
                     <textarea id="newNoteText" placeholder="Agregar nota de seguimiento..."></textarea>
-                    <button class="btn" onclick="addNote('${contact.id}')" style="width: auto; padding: 0.75rem 1.5rem;">Agregar</button>
+                    <button class="btn-add-note" onclick="addNote('${contact.id}')">➕ Agregar Nota</button>
                 </div>
             </div>
         `;
@@ -300,7 +387,7 @@ async function saveStatus(id) {
 
         loadStats();
         loadContacts();
-        alert('Estado actualizado correctamente');
+        alert('✅ Estado actualizado correctamente');
     } catch (error) {
         console.error('Error updating status:', error);
         alert('Error al actualizar el estado');
@@ -334,39 +421,7 @@ async function addNote(id) {
     }
 }
 
-// Update status (quick action from table)
+// Legacy update status (kept for compatibility)
 async function updateStatus(id) {
-    const newStatus = prompt('Nuevo estado:\n1. nuevo\n2. contactado\n3. en-proceso\n4. convertido\n5. no-interesado');
-
-    const statusMap = {
-        '1': 'nuevo',
-        '2': 'contactado',
-        '3': 'en-proceso',
-        '4': 'convertido',
-        '5': 'no-interesado'
-    };
-
-    const status = statusMap[newStatus];
-
-    if (!status) {
-        alert('Estado inválido');
-        return;
-    }
-
-    try {
-        await fetch(`${API_URL}/contacts/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({ status })
-        });
-
-        loadStats();
-        loadContacts();
-    } catch (error) {
-        console.error('Error updating status:', error);
-        alert('Error al actualizar el estado');
-    }
+    viewContact(id);
 }
