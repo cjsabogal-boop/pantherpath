@@ -161,6 +161,49 @@ function formatDateTime(dateStr) {
     }
 }
 
+// Format value - convert slugs to readable text
+function formatValue(value) {
+    if (!value) return '-';
+
+    // Mapping for known values
+    const mappings = {
+        // Experiencia
+        'menos-1-ano': 'Menos de 1 año',
+        '1-3-anos': '1-3 años',
+        '3-5-anos': '3-5 años',
+        '5-10-anos': '5-10 años',
+        'mas-10-anos': 'Más de 10 años',
+        // Disciplinas
+        'salto': 'Salto',
+        'adiestramiento': 'Adiestramiento',
+        'endurance': 'Endurance',
+        'completo': 'Completo',
+        'polo': 'Polo',
+        'western': 'Western',
+        'otra': 'Otra',
+        // Coaching previo
+        'si': 'Sí',
+        'no': 'No',
+        // Estados
+        'nuevo': 'Nuevo',
+        'contactado': 'Contactado',
+        'en-proceso': 'En Proceso',
+        'convertido': 'Convertido',
+        'no-interesado': 'No Interesado'
+    };
+
+    // Check if we have a mapping
+    const lowerValue = value.toLowerCase();
+    if (mappings[lowerValue]) {
+        return mappings[lowerValue];
+    }
+
+    // Otherwise, capitalize first letter and replace dashes with spaces
+    return value
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, l => l.toUpperCase());
+}
+
 // Load contacts
 async function loadContacts() {
     try {
@@ -193,7 +236,7 @@ function renderContacts() {
             <td><strong>${contact.nombre || 'Sin nombre'}</strong></td>
             <td>${contact.email || '-'}</td>
             <td>${contact.pais || '-'}</td>
-            <td>${contact.experiencia || '-'}</td>
+            <td>${formatValue(contact.experiencia)}</td>
             <td>
                 <select class="status-select status-${contact.status}" onchange="quickUpdateStatus('${contact.id}', this.value, this)">
                     <option value="nuevo" ${contact.status === 'nuevo' ? 'selected' : ''}>🔵 Nuevo</option>
@@ -295,15 +338,15 @@ async function viewContact(id) {
                     <h4 class="section-subtitle">🐴 Perfil Ecuestre</h4>
                     <div class="detail-row">
                         <span class="detail-label">Experiencia</span>
-                        <span class="detail-value">${contact.experiencia || '-'}</span>
+                        <span class="detail-value">${formatValue(contact.experiencia)}</span>
                     </div>
                     <div class="detail-row">
                         <span class="detail-label">Disciplina</span>
-                        <span class="detail-value">${contact.disciplina || '-'}</span>
+                        <span class="detail-value">${formatValue(contact.disciplina)}</span>
                     </div>
                     <div class="detail-row">
                         <span class="detail-label">Coaching Previo</span>
-                        <span class="detail-value">${contact.coaching_previo || '-'}</span>
+                        <span class="detail-value">${formatValue(contact.coaching_previo)}</span>
                     </div>
                 </div>
             </div>
