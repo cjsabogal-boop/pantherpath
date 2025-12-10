@@ -227,17 +227,17 @@ function renderContacts() {
     const tbody = document.getElementById('contactsTableBody');
 
     if (filtered.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: #B8B8B8;">No hay contactos</td></tr>';
+        tbody.innerHTML = '<tr class="no-contacts-row"><td colspan="7" style="text-align: center; color: #B8B8B8; padding: 2rem;">No hay contactos</td></tr>';
         return;
     }
 
     tbody.innerHTML = filtered.map(contact => `
         <tr>
-            <td><strong>${contact.nombre || 'Sin nombre'}</strong></td>
-            <td>${contact.email || '-'}</td>
-            <td>${contact.pais || '-'}</td>
-            <td>${formatValue(contact.experiencia)}</td>
-            <td>
+            <td data-label="Nombre"><strong>${contact.nombre || 'Sin nombre'}</strong></td>
+            <td data-label="Email">${contact.email || '-'}</td>
+            <td data-label="País">${contact.pais || '-'}</td>
+            <td data-label="Experiencia">${formatValue(contact.experiencia)}</td>
+            <td data-label="Estado">
                 <select class="status-select status-${contact.status}" onchange="quickUpdateStatus('${contact.id}', this.value, this)">
                     <option value="nuevo" ${contact.status === 'nuevo' ? 'selected' : ''}>🔵 Nuevo</option>
                     <option value="contactado" ${contact.status === 'contactado' ? 'selected' : ''}>🟡 Contactado</option>
@@ -246,9 +246,9 @@ function renderContacts() {
                     <option value="no-interesado" ${contact.status === 'no-interesado' ? 'selected' : ''}>🔴 No Interesado</option>
                 </select>
             </td>
-            <td>${formatDate(contact.created_at)}</td>
-            <td>
-                <button class="btn-action" onclick="viewContact('${contact.id}')">👁️ Ver Detalles</button>
+            <td data-label="Fecha">${formatDate(contact.created_at)}</td>
+            <td data-label="Acciones">
+                <button class="btn-action" onclick="viewContact('${contact.id}')">👁️ Ver</button>
             </td>
         </tr>
     `).join('');
