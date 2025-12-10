@@ -148,36 +148,54 @@ a:focus {
         padding: 0 0.5rem;
     }
 
-    /* Corregir desbordamiento del título hero - reorganizar en columna */
+    .hero-logo-text-light {
+        letter-spacing: 0;
+        display: inline;
+        font-size: inherit;
+    }
+
+    /* Corregir título hero - EN UNA SOLA LÍNEA pero más pequeño */
     .hero-title {
-        font-size: clamp(1.4rem, 7vw, 1.8rem);
+        font-size: clamp(0.95rem, 5vw, 1.3rem);
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        gap: 0.15rem;
-        width: 100%;
+        justify-content: center;
+        gap: 0;
+        width: auto;
         max-width: 100%;
         text-align: center;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        padding: 0;
+        white-space: nowrap;
+        padding: 0 0.25rem;
         margin: 0 auto;
     }
 
     .hero-logo-divider {
-        width: 50px;
-        height: 2px;
-        margin: 0.4rem 0;
-        display: block;
+        width: 2px;
+        height: 0.75em;
+        margin: 0 0.3rem;
+        display: inline-block;
+        vertical-align: middle;
     }
 
     .hero-logo-text,
     .hero-logo-text-light {
-        letter-spacing: 1px;
-        display: block;
-        width: 100%;
-        text-align: center;
+        letter-spacing: 0;
+        display: inline;
         font-size: inherit;
+    }
+
+    /* ARREGLAR SCROLL - permitir touch scroll */
+    .hero-slider,
+    .slide,
+    .hero-content-wrapper,
+    .hero-content-inner {
+        touch-action: pan-y;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .video-play-btn {
+        touch-action: manipulation;
     }
 
     /* Reorganizar subtítulo y botón de play en columna */
