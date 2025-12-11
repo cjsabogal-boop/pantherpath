@@ -1574,6 +1574,13 @@ a:focus:not(.nav-logo) {
     padding: var(--spacing-3xl) var(--spacing-xl);
 }
 
+/* Reduce padding for mobile */
+@media (max-width: 768px) {
+    .split-content {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+}
+
 /* White Split Section Variant */
 .white-split-section .split-content {
     background: #FFFFFF;
@@ -1621,6 +1628,32 @@ a:focus:not(.nav-logo) {
 
 #nicole-story .split-image-overlay {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+/* Reduce padding for nicole-story on mobile */
+@media (max-width: 768px) {
+    #nicole-story .split-content {
+        padding: var(--spacing-lg) var(--spacing-md) !important;
+    }
+
+    #nicole-story .split-image {
+        min-height: 300px;
+    }
+}
+
+/* Reduce padding for #sobre section on mobile */
+#sobre .split-content {
+    background: var(--color-primary) !important;
+}
+
+@media (max-width: 768px) {
+    #sobre .split-content {
+        padding: var(--spacing-lg) var(--spacing-md) !important;
+    }
+
+    #sobre .split-image {
+        min-height: 300px;
+    }
 }
 
 .feature-list {
@@ -2057,6 +2090,15 @@ a:focus:not(.nav-logo) {
     border-top: 4px solid;
     border-bottom: 4px solid;
     border-image: linear-gradient(90deg, #C9A961 0%, #D4AF37 50%, #F4D03F 100%) 1;
+    margin-top: 0;
+}
+
+/* Remove any white space before gallery on mobile */
+@media (max-width: 768px) {
+    .section-gallery {
+        margin-top: -2px;
+        /* Eliminate gap */
+    }
 }
 
 .gallery-grid {
@@ -2069,6 +2111,16 @@ a:focus:not(.nav-logo) {
 @media (max-width: 968px) {
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+        /* Smaller images on mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 180px;
+        /* Even smaller on small phones */
     }
 }
 
@@ -2103,11 +2155,20 @@ a:focus:not(.nav-logo) {
     justify-content: center;
     gap: var(--spacing-lg);
     opacity: 0;
-    transition: opacity var(--transition-base);
+    transition: opacity 0.3s ease;
+    /* Faster transition */
 }
 
 .gallery-item:hover .gallery-overlay {
     opacity: 1;
+}
+
+/* Show overlay by default on mobile for the large item */
+@media (max-width: 768px) {
+    .gallery-item.large .gallery-overlay {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.5);
+    }
 }
 
 .gallery-title {
@@ -2115,6 +2176,26 @@ a:focus:not(.nav-logo) {
     font-size: 2.5rem;
     text-align: center;
     padding: 0 var(--spacing-lg);
+    animation: fadeInText 0.5s ease-in forwards;
+    /* Faster text appearance */
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-title {
+        font-size: 1.5rem;
+    }
 }
 
 /* ===========================
