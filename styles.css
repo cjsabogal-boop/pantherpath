@@ -268,41 +268,6 @@ a:focus:not(.nav-logo) {
         box-sizing: border-box;
     }
 
-    /* Founder profile más compacto */
-    .founder-profile {
-        max-width: 280px;
-        padding: 0.75rem;
-    }
-
-    .founder-profile .btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.75rem;
-    }
-
-    .founder-avatar {
-        width: 40px;
-        height: 40px;
-    }
-
-    .founder-name {
-        font-size: 0.875rem;
-    }
-
-    .founder-role {
-        font-size: 0.65rem;
-    }
-
-    /* Hero description más compacto */
-    .hero-description {
-        font-size: 0.95rem;
-        padding: 0 0.5rem;
-        width: 100%;
-        max-width: 100%;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        box-sizing: border-box;
-    }
-
     /* Hero buttons - Layout Vertical para evitar solapamiento */
     .hero-buttons {
         width: 100%;
@@ -311,43 +276,64 @@ a:focus:not(.nav-logo) {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1.5rem !important;
         margin-top: 1rem;
     }
 
     .hero-buttons .btn-primary {
         width: 100%;
         max-width: 280px;
-        /* Ancho máximo controlado */
         justify-content: center;
         padding: 1rem;
     }
 
-    /* Founder profile - Corrección solapamiento */
+    /* Founder profile - ESTILO UNIFICADO Y VISIBLE */
     .founder-profile {
         max-width: 100%;
         width: 100%;
-        padding: 1rem;
+        padding: 1rem !important;
         display: flex;
         flex-direction: column;
-        /* Apilar verticalmente imagen/nombre/botón */
+        /* Apilar verticalmente */
         align-items: center;
         text-align: center;
-        gap: 0.8rem;
-        background: rgba(0, 0, 0, 0.6);
+        gap: 0.8rem !important;
+        /* FONDO OSCURO PARA CONFIRMAR CAMBIO */
+        background: rgba(20, 20, 20, 0.9) !important;
+        border: 1px solid rgba(212, 175, 55, 0.5) !important;
         border-radius: 12px;
-        margin-top: 1rem;
+        margin-top: 1rem !important;
+    }
+
+    .founder-avatar {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0.5rem;
     }
 
     .founder-details {
         text-align: center;
         width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .founder-name {
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .founder-role {
+        font-size: 0.7rem;
     }
 
     .founder-profile .btn {
         width: 100%;
         max-width: 200px;
         justify-content: center;
+        padding: 0.7rem 1rem !important;
+        background: rgba(255, 255, 255, 0.1);
+        /* Botón contraste */
+        border: 1px solid var(--color-secondary);
     }
 }
 
