@@ -4354,3 +4354,36 @@ a:focus:not(.nav-logo) {
         display: block;
     }
 }
+/* ===========================
+   OPTIMIZACIÓN DE ESPACIOS EN MÓVIL
+   =========================== */
+@media (max-width: 768px) {
+    :root {
+        --spacing-lg: 1.25rem;
+        --spacing-xl: 1.5rem;
+        --spacing-2xl: 2rem;
+        --spacing-3xl: 3rem; /* Reducido a la mitad (96px -> 48px) */
+    }
+
+    .section {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .section-header-center {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .stats-grid,
+    .stats-grid-enhanced {
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+
+    .stat-item-enhanced {
+        padding: 1.5rem;
+    }
+    
+    .split-content {
+        padding: 2rem 1rem;
+    }
+}
