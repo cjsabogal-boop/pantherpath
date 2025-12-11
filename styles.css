@@ -126,27 +126,36 @@ a:focus:not(.nav-logo) {
     .hero-slider {
         width: 100%;
         max-width: 100%;
-        height: auto !important; /* Permitir que crezca según contenido */
+        height: auto !important;
+        /* Permitir que crezca según contenido */
         min-height: 100vh;
-        overflow: visible !important; /* Permitir scroll si excede */
+        overflow: visible !important;
+        /* Permitir scroll si excede */
         touch-action: auto !important;
         -webkit-overflow-scrolling: touch !important;
-        clip-path: none !important; /* Evitar cortes en móvil */
+        clip-path: none !important;
+        /* Evitar cortes en móvil */
         margin-bottom: 0;
     }
 
     .slide {
         touch-action: auto !important;
+        height: 100vh;
+        /* Altura base para el fondo */
+        position: absolute;
     }
 
     .hero-content-wrapper {
         width: 100%;
         max-width: 100%;
         padding: 0;
-        padding-top: 110px; /* Aumentado para bajar la caja de Acompañamiento */
-        padding-bottom: 50px; /* Espacio abajo */
+        padding-top: 110px;
+        /* Aumentado para bajar la caja de Acompañamiento */
+        padding-bottom: 50px;
+        /* Espacio abajo */
         touch-action: auto !important;
-        height: auto !important; /* Permitir flujo natural */
+        height: auto !important;
+        /* Permitir flujo natural */
     }
 
     .hero-content-inner {
@@ -154,24 +163,42 @@ a:focus:not(.nav-logo) {
         max-width: 100%;
         box-sizing: border-box;
         margin: 0 auto;
-        padding: 0 1rem;
+        padding: 0 1.5rem;
         touch-action: auto !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Centrado automático */
+        justify-content: center;
+        gap: 1.5rem;
+        /* Espacio consistente entre elementos */
+        position: relative;
+        z-index: 10;
     }
 
-    /* BADGE COMPLETAMENTE VISIBLE */
+    /* BADGE (CAJA) - Corrección visibilidad Chrome/Safari */
     .hero-badge {
-        padding: 0.3rem 0.5rem;
-        font-size: 0.55rem;
-        letter-spacing: 0.3px;
+        display: inline-block;
+        padding: 0.6rem 1rem;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
         width: auto;
         max-width: 100%;
         text-align: center;
-        white-space: nowrap;
-        display: inline-block;
-        box-sizing: border-box;
+        white-space: normal;
+        /* Permitir bajada de línea */
         margin-bottom: 0.5rem;
+        margin-top: 2rem;
+        /* Espacio extra arriba */
         overflow: visible !important;
+        position: relative;
+        z-index: 20;
+        background: rgba(20, 20, 20, 0.85);
+        /* Fondo más sólido para legibilidad */
+        backdrop-filter: blur(5px);
     }
+
+
 
     /* TITULO EN UNA LINEA */
     .hero-title {
@@ -276,17 +303,51 @@ a:focus:not(.nav-logo) {
         box-sizing: border-box;
     }
 
-    /* Hero buttons más compactos */
+    /* Hero buttons - Layout Vertical para evitar solapamiento */
     .hero-buttons {
         width: 100%;
         max-width: 100%;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
     }
 
     .hero-buttons .btn-primary {
-        padding: 0.875rem 1.25rem;
-        font-size: 0.85rem;
+        width: 100%;
+        max-width: 280px;
+        /* Ancho máximo controlado */
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    /* Founder profile - Corrección solapamiento */
+    .founder-profile {
         max-width: 100%;
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        /* Apilar verticalmente imagen/nombre/botón */
+        align-items: center;
+        text-align: center;
+        gap: 0.8rem;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 12px;
+        margin-top: 1rem;
+    }
+
+    .founder-details {
+        text-align: center;
+        width: 100%;
+    }
+
+    .founder-profile .btn {
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
     }
 }
 
