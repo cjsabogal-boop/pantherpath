@@ -114,10 +114,11 @@ a:focus:not(.nav-logo) {
         font-size: 2rem;
     }
 
-    /* Logo nav más pequeño */
+    /* Logo nav más pequeño en móvil */
     .nav-logo {
-        font-size: 1.25rem;
-        gap: 0.4rem;
+        font-size: 1rem !important;
+        /* Reducido aún más */
+        gap: 0.3rem;
     }
 
     .logo-text,
@@ -4413,11 +4414,33 @@ a:focus:not(.nav-logo) {
 
     .stat-item-enhanced {
         padding: 1.5rem;
+        margin: 0.75rem 0;
+        /* Márgenes iguales arriba y abajo */
     }
 
     .split-content {
         padding: 1.5rem 1rem !important;
         /* Reducir padding interno */
+    }
+
+    /* Reducir fuentes en secciones de texto móvil */
+    .white-split-section .section-title-large,
+    .section-split .section-title-large {
+        font-size: 1.8rem !important;
+        /* Reducido de 2rem */
+    }
+
+    .white-split-section .text-large,
+    .section-split .text-large {
+        font-size: 0.9rem !important;
+        /* Reducido */
+    }
+
+    /* Reducir altura de imagen de fondo en split */
+    .split-image {
+        min-height: 250px !important;
+        /* Reducido de 400px a la mitad */
+        max-height: 250px;
     }
 
     /* Línea dorada separadora entre Mi Historia y Sobre el Programa */
