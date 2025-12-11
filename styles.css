@@ -1633,11 +1633,11 @@ a:focus:not(.nav-logo) {
 /* Reduce padding for nicole-story on mobile */
 @media (max-width: 768px) {
     #nicole-story .split-content {
-        padding: var(--spacing-lg) var(--spacing-md) !important;
+        padding: var(--spacing-md) var(--spacing-md) !important;
     }
 
     #nicole-story .split-image {
-        min-height: 300px;
+        min-height: 250px;
     }
 }
 
@@ -1648,11 +1648,11 @@ a:focus:not(.nav-logo) {
 
 @media (max-width: 768px) {
     #sobre .split-content {
-        padding: var(--spacing-lg) var(--spacing-md) !important;
+        padding: var(--spacing-md) var(--spacing-md) !important;
     }
 
     #sobre .split-image {
-        min-height: 300px;
+        min-height: 250px;
     }
 }
 
@@ -2568,9 +2568,12 @@ a:focus:not(.nav-logo) {
 
 .planes-grid-new {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-xl);
     margin-top: var(--spacing-2xl);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .plan-card-new {
@@ -2760,10 +2763,22 @@ a:focus:not(.nav-logo) {
     margin-bottom: var(--spacing-sm);
 }
 
+@media (max-width: 768px) {
+    .footer-cta-title {
+        font-size: 1.75rem;
+    }
+}
+
 .footer-cta-subtitle {
     font-size: 1.25rem;
     color: var(--color-text-light);
     margin-bottom: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+    .footer-cta-subtitle {
+        font-size: 1rem;
+    }
 }
 
 .footer-main {
@@ -2975,9 +2990,16 @@ a:focus:not(.nav-logo) {
     color: #1A1A1A;
     /* Dark text for better contrast on gold */
     font-size: 0.95rem;
-    font-weight: 700;
-    /* Bolder for sharpness */
+    font-weight: 600;
+    /* Medium weight */
     letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+    .footer-copyright {
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
 }
 
 .footer-legal {
@@ -2989,7 +3011,7 @@ a:focus:not(.nav-logo) {
 .footer-legal span {
     color: #1A1A1A;
     /* Ensure separator dot is also black */
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .footer-legal a {
@@ -2997,9 +3019,16 @@ a:focus:not(.nav-logo) {
     /* Dark text for better contrast on gold */
     text-decoration: none;
     font-size: 0.95rem;
-    font-weight: 700;
-    /* Bolder for sharpness */
+    font-weight: 600;
+    /* Medium weight */
     transition: color var(--transition-base);
+}
+
+@media (max-width: 768px) {
+    .footer-legal a {
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
 }
 
 .footer-legal a:hover {
@@ -4463,6 +4492,22 @@ a:focus:not(.nav-logo) {
 
     .journey-timeline {
         display: block;
+    }
+}
+
+/* Mobile: pricing grid single column */
+@media (max-width: 768px) {
+    .planes-grid-new {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .plan-card-new.popular {
+        transform: scale(1);
+    }
+
+    .plan-card-new.popular:hover {
+        transform: translateY(-10px);
     }
 }
 

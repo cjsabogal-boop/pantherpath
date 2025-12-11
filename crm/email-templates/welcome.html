@@ -29,6 +29,37 @@
                 width: 100% !important;
             }
         }
+
+        @keyframes pulse-animation {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+            }
+
+            50% {
+                transform: scale(1.02) rotate(1deg);
+                box-shadow: 0 0 20px 0 rgba(212, 175, 55, 0.7);
+            }
+
+            75% {
+                transform: scale(1.02) rotate(-1deg);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+            }
+        }
+
+        .popular-card {
+            animation: pulse-animation 2s infinite ease-in-out;
+            position: relative;
+            z-index: 10;
+            border-color: #D4AF37 !important;
+            border-width: 2px !important;
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%) !important;
+        }
     </style>
 </head>
 
@@ -124,147 +155,133 @@
 
                     <!-- Pricing Table - Responsive -->
                     <tr>
-                        <td style="padding: 0 10px 40px;">
+                        <td style="padding: 0 10px 40px; text-align: center;">
                             <!--[if mso]>
                             <table role="presentation" style="width: 100%;">
                             <tr>
                             <![endif]-->
 
                             <!--[if !mso]><!-->
-                            <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                            <table role="presentation" style="width: 100%; border-collapse: collapse; margin: 0 auto;">
                                 <tr>
                                     <!--<![endif]-->
 
-                                    <!-- Plan 1: Sesión Piloto -->
+                                    <!-- Plan 1: Sesión Individual ($25) -->
                                     <!--[if mso]>
-                                    <td style="width: 33%; padding: 0 8px; vertical-align: top;">
+                                    <td style="width: 33%; padding: 0 4px; vertical-align: top;">
                                     <![endif]-->
                                     <!--[if !mso]><!-->
                                     <td class="pricing-column"
-                                        style="width: 33%; padding: 0 8px; vertical-align: top; display: inline-block;">
+                                        style="width: 31%; padding: 0 4px; vertical-align: top; display: inline-block; box-sizing: border-box;">
                                         <!--<![endif]-->
                                         <table role="presentation"
-                                            style="width: 100%; background-color: #1F1F1F; border-radius: 12px; border: 1px solid #2A2A2A; overflow: hidden;">
+                                            style="width: 100%; background-color: #1F1F1F; border-radius: 12px; border: 1px solid #2A2A2A; overflow: hidden; height: 100%;">
                                             <tr>
-                                                <td style="padding: 20px 15px; text-align: center;">
-                                                    <div
-                                                        style="background: linear-gradient(135deg, #8B7355 0%, #D4AF37 50%, #8B7355 100%); color: #000; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 12px;">
-                                                        PRUEBA
-                                                    </div>
+                                                <td style="padding: 20px 10px; text-align: center;">
                                                     <h4
-                                                        style="margin: 0 0 8px; font-size: 16px; font-weight: 700; color: #D4AF37;">
-                                                        Sesión Piloto
+                                                        style="margin: 0 0 8px; font-size: 15px; font-weight: 700; color: #D4AF37; min-height: 38px; display: flex; align-items: center; justify-content: center;">
+                                                        Sesión Individual
                                                     </h4>
                                                     <p
-                                                        style="margin: 0 0 12px; font-size: 24px; font-weight: 800; color: #FFFFFF;">
-                                                        $50
+                                                        style="margin: 0 0 12px; font-size: 22px; font-weight: 800; color: #FFFFFF;">
+                                                        $25<span style="font-size: 12px; font-weight: 400;"> USD</span>
                                                     </p>
-                                                    <p
-                                                        style="margin: 0 0 15px; font-size: 12px; line-height: 1.4; color: #D1D1D1; min-height: 50px;">
-                                                        1 sesión de 60 min para trabajar tu reto más urgente
-                                                    </p>
-                                                    <a href="{{STRIPE_LINK_50}}"
-                                                        style="display: block; background-color: #635BFF; color: #FFFFFF; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 12px; margin-bottom: 6px;">
-                                                        Stripe
-                                                    </a>
-                                                    <a href="{{MERCADOPAGO_LINK_50}}"
-                                                        style="display: block; background-color: #009EE3; color: #FFFFFF; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 12px; margin-bottom: 6px;">
-                                                        MercadoPago
-                                                    </a>
-                                                    <a href="{{PAYPAL_LINK_50}}"
-                                                        style="display: block; background-color: #0070BA; color: #FFFFFF; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 12px;">
-                                                        PayPal
+                                                    <ul
+                                                        style="list-style: none; padding: 0; margin: 0 0 15px; text-align: left; font-size: 11px; color: #D1D1D1; line-height: 1.4;">
+                                                        <li style="margin-bottom: 5px;">✓ 1 sesión 1:1 (45 min)</li>
+                                                        <li style="margin-bottom: 5px;">✓ Diagnóstico inicial</li>
+                                                        <li style="margin-bottom: 5px; opacity: 0.6;">✗ Sin seguimiento
+                                                            posterior</li>
+                                                        <li style="margin-bottom: 5px; opacity: 0.6;">✗ Sin grabación
+                                                        </li>
+                                                        <li style="color: #D4AF37;">💡 Ideal consultas rápidas</li>
+                                                    </ul>
+                                                    <a href="https://pantherpath.co/#planes"
+                                                        style="display: block; background: #2A2A2A; color: #D4AF37; border: 1px solid #D4AF37; text-align: center; padding: 10px 5px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 12px; margin-bottom: 8px; text-transform: uppercase;">
+                                                        Ver Plan
                                                     </a>
                                                 </td>
                                             </tr>
                                         </table>
                                     </td>
 
-                                    <!-- Plan 2: Mensual (DESTACADO) -->
+                                    <!-- Plan 2: 4 Sesiones ($80) -->
                                     <!--[if mso]>
-                                    <td style="width: 34%; padding: 0 8px; vertical-align: top;">
+                                    <td style="width: 33%; padding: 0 4px; vertical-align: top;">
                                     <![endif]-->
                                     <!--[if !mso]><!-->
                                     <td class="pricing-column"
-                                        style="width: 34%; padding: 0 8px; vertical-align: top; display: inline-block;">
+                                        style="width: 31%; padding: 0 4px; vertical-align: top; display: inline-block; box-sizing: border-box;">
                                         <!--<![endif]-->
                                         <table role="presentation"
-                                            style="width: 100%; background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%); border-radius: 12px; border: 2px solid #D4AF37; overflow: hidden; box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);">
+                                            style="width: 100%; background-color: #1F1F1F; border-radius: 12px; border: 1px solid #2A2A2A; overflow: hidden; height: 100%;">
                                             <tr>
-                                                <td style="padding: 20px 15px; text-align: center;">
+                                                <td style="padding: 20px 10px; text-align: center;">
+                                                    <h4
+                                                        style="margin: 0 0 8px; font-size: 15px; font-weight: 700; color: #D4AF37; min-height: 38px; display: flex; align-items: center; justify-content: center;">
+                                                        Paquete 4 Sesiones
+                                                    </h4>
+                                                    <p
+                                                        style="margin: 0 0 4px; font-size: 22px; font-weight: 800; color: #FFFFFF;">
+                                                        $80<span style="font-size: 12px; font-weight: 400;"> USD</span>
+                                                    </p>
+                                                    <p style="margin: 0 0 8px; font-size: 10px; color: #4CAF50;">Ahorras
+                                                        $20 (20% OFF)</p>
+                                                    <ul
+                                                        style="list-style: none; padding: 0; margin: 0 0 15px; text-align: left; font-size: 11px; color: #D1D1D1; line-height: 1.4;">
+                                                        <li style="margin-bottom: 5px;">✓ 4 sesiones 1:1 (45 min)</li>
+                                                        <li style="margin-bottom: 5px;">✓ Soporte WhatsApp</li>
+                                                        <li style="margin-bottom: 5px;">✓ Grabación llamadas</li>
+                                                        <li style="margin-bottom: 5px;">✓ Plan de acción PDF</li>
+                                                    </ul>
+                                                    <a href="https://pantherpath.co/#planes"
+                                                        style="display: block; background: #2A2A2A; color: #D4AF37; border: 1px solid #D4AF37; text-align: center; padding: 10px 5px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 12px; margin-bottom: 8px; text-transform: uppercase;">
+                                                        Ver Plan
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                    <!-- Plan 3: 6 Sesiones ($110) - Popular -->
+                                    <!--[if mso]>
+                                    <td style="width: 33%; padding: 0 4px; vertical-align: top;">
+                                    <![endif]-->
+                                    <!--[if !mso]><!-->
+                                    <td class="pricing-column"
+                                        style="width: 31%; padding: 0 4px; vertical-align: top; display: inline-block; box-sizing: border-box;">
+                                        <!--<![endif]-->
+                                        <table role="presentation" class="popular-card"
+                                            style="width: 100%; background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%); border-radius: 12px; border: 2px solid #D4AF37; overflow: hidden; height: 100%;">
+                                            <tr>
+                                                <td style="padding: 20px 10px; text-align: center;">
                                                     <div
-                                                        style="background: #D4AF37; color: #000; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 12px;">
+                                                        style="background: #D4AF37; color: #000; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 4px; display: inline-block; margin-bottom: 8px;">
                                                         MÁS POPULAR
                                                     </div>
                                                     <h4
-                                                        style="margin: 0 0 8px; font-size: 16px; font-weight: 700; color: #D4AF37;">
-                                                        Mensual
+                                                        style="margin: 0 0 8px; font-size: 15px; font-weight: 700; color: #D4AF37; min-height: 38px; display: flex; align-items: center; justify-content: center;">
+                                                        Paquete 6 Sesiones
                                                     </h4>
                                                     <p
-                                                        style="margin: 0 0 12px; font-size: 24px; font-weight: 800; color: #FFFFFF;">
-                                                        $80<span style="font-size: 14px; font-weight: 400;">/mes</span>
+                                                        style="margin: 0 0 4px; font-size: 22px; font-weight: 800; color: #FFFFFF;">
+                                                        $110<span style="font-size: 12px; font-weight: 400;"> USD</span>
                                                     </p>
-                                                    <p
-                                                        style="margin: 0 0 15px; font-size: 12px; line-height: 1.4; color: #D1D1D1; min-height: 50px;">
-                                                        2 sesiones/mes + comunidad + recursos exclusivos
-                                                    </p>
-                                                    <a href="{{STRIPE_LINK_80}}"
-                                                        style="display: block; background-color: #635BFF; color: #FFFFFF; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 12px; margin-bottom: 6px;">
-                                                        Stripe
+                                                    <p style="margin: 0 0 8px; font-size: 10px; color: #4CAF50;">Ahorras
+                                                        $40 (27% OFF)</p>
+                                                    <ul
+                                                        style="list-style: none; padding: 0; margin: 0 0 15px; text-align: left; font-size: 11px; color: #D1D1D1; line-height: 1.4;">
+                                                        <li style="margin-bottom: 5px;">✓ 6 sesiones 1:1</li>
+                                                        <li style="margin-bottom: 5px;">✓ Soporte WhatsApp</li>
+                                                        <li style="margin-bottom: 5px;">✓ Material descargable</li>
+                                                        <li style="margin-bottom: 5px;">✓ 2 Check-ins extra</li>
+                                                    </ul>
+                                                    <a href="https://pantherpath.co/#planes"
+                                                        style="display: block; background: linear-gradient(135deg, #8B7355 0%, #D4AF37 50%, #8B7355 100%); color: #000000; text-align: center; padding: 12px 5px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 13px; margin-bottom: 8px; text-transform: uppercase;">
+                                                        💳 Pagar
                                                     </a>
-                                                    <a href="{{MERCADOPAGO_LINK_80}}"
-                                                        style="display: block; background-color: #009EE3; color: #FFFFFF; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 12px; margin-bottom: 6px;">
-                                                        MercadoPago
-                                                    </a>
-                                                    <a href="{{PAYPAL_LINK_80}}"
-                                                        style="display: block; background-color: #0070BA; color: #FFFFFF; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 12px;">
-                                                        PayPal
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-
-                                    <!-- Plan 3: Premium -->
-                                    <!--[if mso]>
-                                    <td style="width: 33%; padding: 0 8px; vertical-align: top;">
-                                    <![endif]-->
-                                    <!--[if !mso]><!-->
-                                    <td class="pricing-column"
-                                        style="width: 33%; padding: 0 8px; vertical-align: top; display: inline-block;">
-                                        <!--<![endif]-->
-                                        <table role="presentation"
-                                            style="width: 100%; background-color: #1F1F1F; border-radius: 12px; border: 1px solid #2A2A2A; overflow: hidden;">
-                                            <tr>
-                                                <td style="padding: 20px 15px; text-align: center;">
-                                                    <div
-                                                        style="background: linear-gradient(135deg, #8B7355 0%, #D4AF37 50%, #8B7355 100%); color: #000; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 12px;">
-                                                        PREMIUM
-                                                    </div>
-                                                    <h4
-                                                        style="margin: 0 0 8px; font-size: 16px; font-weight: 700; color: #D4AF37;">
-                                                        Premium
-                                                    </h4>
-                                                    <p
-                                                        style="margin: 0 0 12px; font-size: 24px; font-weight: 800; color: #FFFFFF;">
-                                                        $110<span style="font-size: 14px; font-weight: 400;">/mes</span>
-                                                    </p>
-                                                    <p
-                                                        style="margin: 0 0 15px; font-size: 12px; line-height: 1.4; color: #D1D1D1; min-height: 50px;">
-                                                        4 sesiones/mes + WhatsApp + análisis de video
-                                                    </p>
-                                                    <a href="{{STRIPE_LINK_110}}"
-                                                        style="display: block; background-color: #635BFF; color: #FFFFFF; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 12px; margin-bottom: 6px;">
-                                                        Stripe
-                                                    </a>
-                                                    <a href="{{MERCADOPAGO_LINK_110}}"
-                                                        style="display: block; background-color: #009EE3; color: #FFFFFF; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 12px; margin-bottom: 6px;">
-                                                        MercadoPago
-                                                    </a>
-                                                    <a href="{{PAYPAL_LINK_110}}"
-                                                        style="display: block; background-color: #0070BA; color: #FFFFFF; text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 12px;">
-                                                        PayPal
-                                                    </a>
+                                                    <p style="margin: 0; font-size: 9px; color: #808080;">Stripe /
+                                                        PayPal</p>
                                                 </td>
                                             </tr>
                                         </table>
