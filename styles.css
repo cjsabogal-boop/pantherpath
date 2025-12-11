@@ -163,15 +163,18 @@ a:focus:not(.nav-logo) {
         max-width: 100%;
         box-sizing: border-box;
         margin: 0 auto;
-        padding: 0 1.5rem;
+        padding: 0 1rem;
+        /* Padding lateral equilibrado */
         touch-action: auto !important;
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* Centrado automático */
+        /* Centrado absoluto */
         justify-content: center;
-        gap: 1.5rem;
-        /* Espacio consistente entre elementos */
+        text-align: center;
+        /* Asegurar texto centrado */
+        gap: 0.8rem;
+        /* Compactar espacios verticales */
         position: relative;
         z-index: 10;
     }
@@ -236,27 +239,38 @@ a:focus:not(.nav-logo) {
     /* Textos centrados forzados */
     .hero-subtitle-wrapper {
         flex-direction: column;
-        gap: 1rem;
+        /* Play button debajo o al lado segun prefieras, aqui seguimos columna */
+        gap: 0.5rem;
+        /* Reducir espacio con boton play */
         width: 100%;
         align-items: center;
         justify-content: center;
         padding: 0;
         text-align: center;
+        margin-bottom: 0.5rem;
+        /* Separacion extra pequeña */
     }
 
     .hero-subtitle {
-        font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+        font-size: clamp(0.75rem, 3.5vw, 0.9rem);
+        /* Fuente ligeramente mas pequeña */
         text-align: center;
         width: 100%;
-        padding: 0 1rem;
-        /* Margen seguro lateral */
+        padding: 0;
         margin: 0 auto;
+        white-space: nowrap;
+        /* FORZAR UNA SOLA LINEA */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* Por seguridad */
     }
 
     .video-play-btn {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        /* Reducir tamaño boton play */
+        height: 40px;
         touch-action: manipulation !important;
+        margin-top: 0.2rem;
     }
 
     .video-play-btn svg {
