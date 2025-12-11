@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a Panther Path</title>
+</head>
+
+<body
+    style="margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #0A0A0A;">
+    <table role="presentation" style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <td align="center" style="padding: 40px 20px;">
+                <!-- Main Container -->
+                <table role="presentation"
+                    style="max-width: 600px; width: 100%; background-color: #141414; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);">
+
+                    <!-- Header with Logo -->
+                    <tr>
+                        <td
+                            style="background: linear-gradient(135deg, #000000 0%, #1A1A1A 100%); padding: 40px 30px; text-align: center; border-bottom: 2px solid #D4AF37;">
+                            <h1
+                                style="margin: 0; font-size: 32px; font-weight: 800; color: #FFFFFF; letter-spacing: 2px;">
+                                <span style="color: #D4AF37;">PANTHER</span> | PATH
+                            </h1>
+                            <p
+                                style="margin: 10px 0 0; font-size: 14px; color: #D4AF37; text-transform: uppercase; letter-spacing: 2px;">
+                                Acompañamiento Mental Ecuestre
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Welcome Message -->
+                    <tr>
+                        <td style="padding: 40px 30px; color: #FFFFFF;">
+                            <h2 style="margin: 0 0 20px; font-size: 28px; font-weight: 700; color: #D4AF37;">
+                                ¡Bienvenido/a, {{NOMBRE}}! 🎉
+                            </h2>
+                            <p style="margin: 0 0 15px; font-size: 16px; line-height: 1.6; color: #D1D1D1;">
+                                Gracias por unirte a la lista de espera de <strong style="color: #D4AF37;">Panther
+                                    Path</strong>.
+                            </p>
+                            <p style="margin: 0 0 15px; font-size: 16px; line-height: 1.6; color: #D1D1D1;">
+                                Estoy emocionada de acompañarte en este viaje hacia una mentalidad más fuerte, confianza
+                                real y resultados que antes parecían imposibles.
+                            </p>
+                            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #D1D1D1;">
+                                A continuación, encontrarás los planes disponibles para que puedas asegurar tu lugar:
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Pricing Table -->
+                    <tr>
+                        <td style="padding: 0 30px 40px;">
+                            <table role="presentation" style="width: 100%; border-collapse: collapse;">
+
+                                <!-- Plan 1: Sesión Piloto -->
+                                <tr>
+                                    <td
+                                        style="background-color: #1F1F1F; border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid #2A2A2A;">
+                                        <h3
+                                            style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: #D4AF37;">
+                                            Sesión Piloto
+                                        </h3>
+                                        <p style="margin: 0 0 15px; font-size: 28px; font-weight: 800; color: #FFFFFF;">
+                                            $50 USD
+                                        </p>
+                                        <p style="margin: 0 0 20px; font-size: 14px; line-height: 1.5; color: #D1D1D1;">
+                                            Una sesión de 60 minutos para conocernos y trabajar en tu reto más urgente.
+                                        </p>
+                                        <!-- Payment Buttons -->
+                                        <table role="presentation" style="width: 100%;">
+                                            <tr>
+                                                <td style="padding: 5px;">
+                                                    <a href="{{STRIPE_LINK_50}}"
+                                                        style="display: block; background-color: #635BFF; color: #FFFFFF; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">
+                                                        Pagar con Stripe
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 5px;">
+                                                    <a href="{{MERCADOPAGO_LINK_50}}"
+                                                        style="display: block; background-color: #009EE3; color: #FFFFFF; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">
+                                                        Pagar con MercadoPago
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 5px;">
+                                                    <a href="{{PAYPAL_LINK_50}}"
+                                                        style="display: block; background-color: #0070BA; color: #FFFFFF; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">
+                                                        Pagar con PayPal
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- Spacer -->
+                                <tr>
+                                    <td style="height: 20px;"></td>
+                                </tr>
+
+                                <!-- Plan 2: Acompañamiento Mensual -->
+                                <tr>
+                                    <td
+                                        style="background-color: #1F1F1F; border-radius: 12px; padding: 25px; border: 2px solid #D4AF37;">
+                                        <div
+                                            style="background-color: #D4AF37; color: #000000; display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 10px;">
+                                            MÁS POPULAR
+                                        </div>
+                                        <h3
+                                            style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: #D4AF37;">
+                                            Acompañamiento Mensual
+                                        </h3>
+                                        <p style="margin: 0 0 15px; font-size: 28px; font-weight: 800; color: #FFFFFF;">
+                                            $80 USD/mes
+                                        </p>
+                                        <p style="margin: 0 0 20px; font-size: 14px; line-height: 1.5; color: #D1D1D1;">
+                                            2 sesiones al mes + acceso a comunidad privada + recursos exclusivos.
+                                        </p>
+                                        <table role="presentation" style="width: 100%;">
+                                            <tr>
+                                                <td style="padding: 5px;">
+                                                    <a href="{{STRIPE_LINK_80}}"
+                                                        style="display: block; background-color: #635BFF; color: #FFFFFF; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">
+                                                        Pagar con Stripe
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 5px;">
+                                                    <a href="{{MERCADOPAGO_LINK_80}}"
+                                                        style="display: block; background-color: #009EE3; color: #FFFFFF; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">
+                                                        Pagar con MercadoPago
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 5px;">
+                                                    <a href="{{PAYPAL_LINK_80}}"
+                                                        style="display: block; background-color: #0070BA; color: #FFFFFF; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">
+                                                        Pagar con PayPal
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- Spacer -->
+                                <tr>
+                                    <td style="height: 20px;"></td>
+                                </tr>
+
+                                <!-- Plan 3: Acompañamiento Premium -->
+                                <tr>
+                                    <td
+                                        style="background-color: #1F1F1F; border-radius: 12px; padding: 25px; border: 1px solid #2A2A2A;">
+                                        <h3
+                                            style="margin: 0 0 10px; font-size: 20px; font-weight: 700; color: #D4AF37;">
+                                            Acompañamiento Premium
+                                        </h3>
+                                        <p style="margin: 0 0 15px; font-size: 28px; font-weight: 800; color: #FFFFFF;">
+                                            $110 USD/mes
+                                        </p>
+                                        <p style="margin: 0 0 20px; font-size: 14px; line-height: 1.5; color: #D1D1D1;">
+                                            4 sesiones al mes + soporte directo vía WhatsApp + análisis de video
+                                            personalizado.
+                                        </p>
+                                        <table role="presentation" style="width: 100%;">
+                                            <tr>
+                                                <td style="padding: 5px;">
+                                                    <a href="{{STRIPE_LINK_110}}"
+                                                        style="display: block; background-color: #635BFF; color: #FFFFFF; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">
+                                                        Pagar con Stripe
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 5px;">
+                                                    <a href="{{MERCADOPAGO_LINK_110}}"
+                                                        style="display: block; background-color: #009EE3; color: #FFFFFF; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">
+                                                        Pagar con MercadoPago
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 5px;">
+                                                    <a href="{{PAYPAL_LINK_110}}"
+                                                        style="display: block; background-color: #0070BA; color: #FFFFFF; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">
+                                                        Pagar con PayPal
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Footer Message -->
+                    <tr>
+                        <td style="padding: 0 30px 40px; color: #D1D1D1;">
+                            <p style="margin: 0 0 15px; font-size: 14px; line-height: 1.6;">
+                                Si tienes alguna pregunta, no dudes en responder a este correo. Estoy aquí para
+                                ayudarte.
+                            </p>
+                            <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                                Con cariño,<br>
+                                <strong style="color: #D4AF37;">Nicole Sabogal</strong><br>
+                                <span style="font-size: 12px; color: #808080;">Fundadora de Panther Path</span>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td
+                            style="background-color: #0A0A0A; padding: 20px 30px; text-align: center; border-top: 1px solid #2A2A2A;">
+                            <p style="margin: 0 0 10px; font-size: 12px; color: #808080;">
+                                © 2025 Panther Path. Todos los derechos reservados.
+                            </p>
+                            <p style="margin: 0; font-size: 12px; color: #808080;">
+                                <a href="https://pantherpath.co"
+                                    style="color: #D4AF37; text-decoration: none;">pantherpath.co</a>
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
