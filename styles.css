@@ -268,17 +268,17 @@ a:focus:not(.nav-logo) {
     }
 
     .hero-subtitle {
-        font-size: clamp(0.75rem, 3.5vw, 0.9rem);
-        /* Fuente ligeramente mas pequeña */
+        font-size: clamp(0.7rem, 3.2vw, 0.85rem);
+        /* Fuente más pequeña */
         text-align: center;
         width: 100%;
         padding: 0;
         margin: 0 auto;
-        white-space: nowrap;
-        /* FORZAR UNA SOLA LINEA */
-        overflow: hidden;
-        text-overflow: ellipsis;
-        /* Por seguridad */
+        white-space: normal;
+        /* Permitir múltiples líneas */
+        line-height: 1.4;
+        max-width: 95%;
+        /* Evitar que toque bordes */
     }
 
     .video-play-btn {
@@ -4418,6 +4418,18 @@ a:focus:not(.nav-logo) {
     .split-content {
         padding: 1.5rem 1rem !important;
         /* Reducir padding interno */
+    }
+
+    /* Línea dorada separadora entre Mi Historia y Sobre el Programa */
+    .white-split-section::after {
+        content: '';
+        display: block;
+        width: 80%;
+        max-width: 300px;
+        height: 2px;
+        background: var(--gradient-gold);
+        margin: 2rem auto 0;
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
     }
 
     /* Ajustar scroll indicator para móvil */
