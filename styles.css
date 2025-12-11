@@ -98,6 +98,14 @@ a:focus:not(.nav-logo) {
 
 /* Improve readability on smaller screens */
 @media (max-width: 420px) {
+
+    body,
+    html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        position: relative;
+    }
+
     .text-large {
         font-size: 1rem;
     }
@@ -1465,6 +1473,19 @@ a:focus:not(.nav-logo) {
     color: #1A1A1A;
     margin-top: 1rem;
     font-weight: 700;
+}
+
+@media (max-width: 420px) {
+    .stat-label-enhanced {
+        font-size: 0.9rem;
+        /* Reducir fuente en móvil para que quepa */
+        letter-spacing: 1px;
+    }
+
+    .stat-number-enhanced {
+        font-size: 3.5rem;
+        /* Ajustar número también */
+    }
 }
 
 .stat-description {
@@ -4354,6 +4375,7 @@ a:focus:not(.nav-logo) {
         display: block;
     }
 }
+
 /* ===========================
    OPTIMIZACIÓN DE ESPACIOS EN MÓVIL
    =========================== */
@@ -4362,7 +4384,8 @@ a:focus:not(.nav-logo) {
         --spacing-lg: 1.25rem;
         --spacing-xl: 1.5rem;
         --spacing-2xl: 2rem;
-        --spacing-3xl: 3rem; /* Reducido a la mitad (96px -> 48px) */
+        --spacing-3xl: 3rem;
+        /* Reducido a la mitad (96px -> 48px) */
     }
 
     .section {
@@ -4382,7 +4405,7 @@ a:focus:not(.nav-logo) {
     .stat-item-enhanced {
         padding: 1.5rem;
     }
-    
+
     .split-content {
         padding: 2rem 1rem;
     }
